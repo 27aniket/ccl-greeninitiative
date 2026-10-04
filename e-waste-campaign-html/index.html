@@ -1,0 +1,3244 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Waste Day | Special Campaign 6.0</title>
+  <meta name="description"
+    content="Special Campaign 6.0 - E-Waste Management Initiative by CCL Amrapali-Chandragupt Area.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9f5;
+      color: #172b20;
+      overflow-x: hidden
+    }
+
+    :root {
+      --green: #08783d;
+      --dark-green: #075b31;
+      --yellow: #ffb800;
+      --orange: #f7941d;
+      --blue: #15366f;
+      --dark-blue: #0d2859;
+      --white: #fff;
+      --muted: #64706a;
+      --border: #e1e8e2;
+      --shadow: 0 15px 40px rgba(0, 0, 0, .08)
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 5%;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--dark-green);
+      font-weight: 800;
+      font-size: 18px
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--green), #35a853);
+      color: #fff;
+      font-size: 23px
+    }
+
+    .brand small {
+      display: block;
+      font-size: 10px;
+      color: #6c756f;
+      font-weight: 500;
+      margin-top: 2px
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: #263b31;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s
+    }
+
+    .nav-links a:hover {
+      color: var(--green)
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px
+    }
+
+    .mobile-menu {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 28px;
+      cursor: pointer
+    }
+
+    .btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .3s
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(8, 120, 61, .2)
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-green);
+      transform: translateY(-3px)
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: #222
+    }
+
+    .btn-yellow:hover {
+      background: #ffa000;
+      transform: translateY(-3px)
+    }
+
+    .btn-outline {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: #fff
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: #fff
+    }
+
+    .hero {
+      padding: 145px 5% 80px;
+      background: radial-gradient(circle at 90% 20%, rgba(255, 184, 0, .2), transparent 25%), radial-gradient(circle at 10% 90%, rgba(8, 120, 61, .12), transparent 25%), #f7faf4;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-container {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr .95fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 2
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff5d6;
+      color: #8a5a00;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: .98;
+      color: var(--blue);
+      margin-bottom: 22px;
+      letter-spacing: -2px
+    }
+
+    .hero h1 span {
+      color: var(--orange)
+    }
+
+    .hero-text {
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 28px
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .hero-info {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .info-pill {
+      padding: 9px 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: #405048;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, .04)
+    }
+
+    .poster-frame {
+      background: #fff;
+      padding: 12px;
+      border-radius: 24px;
+      box-shadow: 0 25px 70px rgba(20, 50, 30, .16);
+      transform: rotate(1deg);
+      transition: .4s
+    }
+
+    .poster-frame:hover {
+      transform: rotate(0) translateY(-5px)
+    }
+
+    .poster-frame img {
+      width: 100%;
+      display: block;
+      border-radius: 15px
+    }
+
+    .hero-image {
+      position: relative
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -35px;
+      bottom: 35px;
+      background: #fff;
+      padding: 18px 20px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: float 3s ease-in-out infinite
+    }
+
+    .floating-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #e6f6ec;
+      font-size: 24px
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 18px;
+      color: var(--green)
+    }
+
+    .floating-card span {
+      color: #6b756f;
+      font-size: 12px
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    section {
+      padding: 90px 5%
+    }
+
+    .section-container {
+      max-width: 1250px;
+      margin: auto
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--green);
+      background: #e7f5eb;
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px
+    }
+
+    .section-heading h2 {
+      color: var(--blue);
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 15px
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    .details {
+      background: #fff
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .detail-card {
+      padding: 30px;
+      border-radius: 22px;
+      background: #f9fbf9;
+      border: 1px solid var(--border);
+      transition: .35s
+    }
+
+    .detail-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: #c9dfcf
+    }
+
+    .detail-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #e6f5ea;
+      font-size: 26px;
+      margin-bottom: 20px
+    }
+
+    .detail-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--dark-green)
+    }
+
+    .detail-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px
+    }
+
+    .highlights {
+      background: var(--blue);
+      color: #fff;
+      position: relative;
+      overflow: hidden
+    }
+
+    .highlights .section-heading h2 {
+      color: #fff
+    }
+
+    .highlights .section-heading p {
+      color: rgba(255, 255, 255, .7)
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px
+    }
+
+    .highlight-card {
+      text-align: center;
+      padding: 28px 16px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .06);
+      transition: .3s
+    }
+
+    .highlight-card:hover {
+      background: rgba(255, 255, 255, .12);
+      transform: translateY(-5px)
+    }
+
+    .highlight-card .icon {
+      font-size: 32px;
+      margin-bottom: 14px
+    }
+
+    .highlight-card h3 {
+      font-size: 15px;
+      line-height: 1.4
+    }
+
+    .ewaste-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .ewaste-image img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--shadow)
+    }
+
+    .ewaste-content h2 {
+      color: var(--blue);
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 20px
+    }
+
+    .ewaste-content>p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 25px
+    }
+
+    .ewaste-list {
+      list-style: none;
+      display: grid;
+      gap: 14px
+    }
+
+    .ewaste-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #405048;
+      font-size: 15px;
+      line-height: 1.5
+    }
+
+    .check {
+      min-width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #dff3e5;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold
+    }
+
+    .timeline-section {
+      background: #f5f8f4
+    }
+
+    .timeline {
+      max-width: 900px;
+      margin: auto;
+      position: relative
+    }
+
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #cfe1d4
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 30px;
+      position: relative
+    }
+
+    .timeline-dot {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      border: 5px solid #e4f1e7;
+      position: relative;
+      z-index: 2
+    }
+
+    .timeline-content {
+      background: #fff;
+      padding: 22px;
+      border-radius: 17px;
+      border: 1px solid var(--border);
+      flex: 1
+    }
+
+    .timeline-content h3 {
+      color: var(--dark-green);
+      margin-bottom: 6px
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6
+    }
+
+    .gallery-cta {
+      background: linear-gradient(135deg, #08783d, #0b5d36);
+      color: #fff;
+      border-radius: 30px;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      overflow: hidden
+    }
+
+    .gallery-cta h2 {
+      font-size: 38px;
+      margin-bottom: 10px
+    }
+
+    .gallery-cta p {
+      color: rgba(255, 255, 255, .75);
+      max-width: 600px;
+      line-height: 1.7
+    }
+
+    .gallery-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2
+    }
+
+    footer {
+      background: #071c35;
+      color: #fff;
+      padding: 50px 5% 25px
+    }
+
+    .footer-grid {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      margin-bottom: 12px
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.7;
+      max-width: 450px
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+      color: #ffc42d
+    }
+
+    footer ul {
+      list-style: none
+    }
+
+    footer li {
+      color: rgba(255, 255, 255, .65);
+      margin-bottom: 9px;
+      font-size: 14px
+    }
+
+    .copyright {
+      max-width: 1250px;
+      margin: 20px auto 0;
+      color: rgba(255, 255, 255, .45);
+      font-size: 12px;
+      text-align: center
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 15, 30, .88);
+      z-index: 2000;
+      display: none;
+      padding: 30px;
+      overflow-y: auto
+    }
+
+    .modal.active {
+      display: block
+    }
+
+    .modal-header {
+      max-width: 1200px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff
+    }
+
+    .modal-header h2 {
+      font-size: 30px
+    }
+
+    .close-modal,
+    .viewer-close {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: #111;
+      font-size: 25px;
+      cursor: pointer
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px
+    }
+
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+      cursor: pointer;
+      aspect-ratio: 4/3
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05)
+    }
+
+    .image-viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .94);
+      z-index: 3000;
+      display: none;
+      place-items: center;
+      padding: 30px
+    }
+
+    .image-viewer.active {
+      display: grid
+    }
+
+    .image-viewer img {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 10px;
+      object-fit: contain
+    }
+
+    .viewer-close {
+      position: absolute;
+      top: 25px;
+      right: 30px
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all .7s ease
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media(max-width:1000px) {
+      .hero-container {
+        grid-template-columns: 1fr
+      }
+
+      .hero-content {
+        text-align: center
+      }
+
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      .hero-buttons,
+      .hero-info {
+        justify-content: center
+      }
+
+      .hero-image {
+        max-width: 700px;
+        margin: auto
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .ewaste-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ewaste-image {
+        max-width: 700px;
+        margin: auto
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:760px) {
+      .navbar {
+        padding: 12px 5%
+      }
+
+      .nav-links,
+      .nav-actions {
+        display: none
+      }
+
+      .mobile-menu {
+        display: block
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        position: absolute;
+        top: 72px;
+        left: 5%;
+        right: 5%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .hero {
+        padding-top: 120px
+      }
+
+      section {
+        padding: 65px 5%
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .gallery-cta {
+        padding: 35px 25px;
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .gallery-cta h2 {
+        font-size: 30px
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px
+      }
+
+      .floating-card {
+        left: 10px;
+        bottom: 15px
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero h1 {
+        font-size: 43px
+      }
+
+      .hero-text {
+        font-size: 15px
+      }
+
+      .hero-buttons {
+        flex-direction: column
+      }
+
+      .hero-buttons .btn {
+        width: 100%
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr
+      }
+
+      .modal {
+        padding: 15px
+      }
+
+      .modal-header h2 {
+        font-size: 23px
+      }
+
+      .gallery-cta {
+        border-radius: 20px
+      }
+
+      .gallery-buttons {
+        width: 100%;
+        flex-direction: column
+      }
+
+      .gallery-buttons .btn {
+        width: 100%
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-icon">♻</div>
+        <div>E-WASTE<small>Special Campaign 6.0</small></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#campaign">Campaign</a></li>
+        <li><a href="#ewaste">E-Waste</a></li>
+        <li><a href="#timeline">Activities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://docs.google.com/forms/" target="_blank" class="btn btn-primary">Submit Form</a>
+      </div>
+      <button class="mobile-menu" id="mobileMenu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <div class="hero-content reveal">
+          <div class="hero-badge">♻ Special Campaign 6.0</div>
+          <h1>E-Waste <span>Management</span> Initiative</h1>
+          <p class="hero-text">
+            A focused initiative under Special Campaign 6.0 for effective collection,
+            segregation, responsible disposal and recycling of electronic waste across
+            CCL Amrapali-Chandragupt Area.
+          </p>
+          <div class="hero-buttons">
+            <a href="#campaign" class="btn btn-primary">Explore Campaign →</a>
+            <button class="btn btn-yellow" onclick="openGallery()">📸 View Photo Gallery</button>
+          </div>
+          <div class="hero-info">
+            <div class="info-pill">📅 06 October 2026</div>
+            <div class="info-pill">📍 Amrapali-Chandragupt Area</div>
+            <div class="info-pill">♻ E-Waste Day</div>
+          </div>
+        </div>
+
+        <div class="hero-image reveal">
+          <div class="poster-frame">
+            <img src="img1.jpeg" alt="Special Campaign 6.0 E-Waste Campaign">
+          </div>
+          <div class="floating-card">
+            <div class="floating-icon">♻️</div>
+            <div>
+              <strong>Drop • Segregate • Recycle</strong>
+              <span>Responsible E-Waste Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="details" id="campaign">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <span class="section-tag">About The Initiative</span>
+          <h2>Building a Cleaner & Greener Workplace</h2>
+          <p>
+            Special Campaign 6.0 focuses on creating awareness and encouraging responsible
+            management of electronic waste. Every device we dispose of responsibly contributes
+            towards a cleaner environment.
+          </p>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-card reveal">
+            <div class="detail-icon">📅</div>
+            <h3>Campaign Period</h3>
+            <p>The campaign implementation phase runs from <strong>2nd October to 31st October</strong>,
+              with dedicated activities for e-waste collection and awareness.</p>
+          </div>
+
+          <div class="detail-card reveal">
+            <div class="detail-icon">♻️</div>
+            <h3>E-Waste Collection</h3>
+            <p>Collect obsolete electronic equipment and ensure proper segregation before sending
+              it for responsible recycling or disposal.</p>
+          </div>
+
+          <div class="detail-card reveal">
+            <div class="detail-icon">🌱</div>
+            <h3>Environmental Responsibility</h3>
+            <p>Reduce environmental impact by preventing electronic waste from entering regular
+              waste streams and promoting circular resource use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Key Focus Areas</span>
+          <h2>Campaign Highlights</h2>
+          <p>The campaign focuses on practical actions that support cleanliness, resource efficiency
+            and responsible waste management.</p>
+        </div>
+
+        <div class="highlight-grid">
+          <div class="highlight-card reveal">
+            <div class="icon">💻</div>
+            <h3>E-Waste Disposal</h3>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">♻️</div>
+            <h3>Scrap Disposal</h3>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">🏢</div>
+            <h3>Space Optimization</h3>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">📁</div>
+            <h3>Record Management</h3>
+          </div>
+          <div class="highlight-card reveal">
+            <div class="icon">🌍</div>
+            <h3>Best Practices</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ewaste">
+      <div class="section-container">
+        <div class="ewaste-grid">
+          <div class="ewaste-image reveal">
+            <img src="img2.jpeg" alt="E-Waste Day Special Campaign 6.0">
+          </div>
+
+          <div class="ewaste-content reveal">
+            <span class="section-tag">Why E-Waste Matters</span>
+            <h2>Don't Let Old Electronics Become Tomorrow's Waste</h2>
+            <p>
+              Electronic devices contain valuable materials as well as components that can harm
+              the environment if they are not handled properly. Responsible collection and recycling
+              helps recover resources and reduces waste.
+            </p>
+
+            <ul class="ewaste-list">
+              <li><span class="check">✓</span>Collect unused and obsolete electronic equipment.</li>
+              <li><span class="check">✓</span>Keep e-waste separate from regular waste.</li>
+              <li><span class="check">✓</span>Identify recyclable electronic materials.</li>
+              <li><span class="check">✓</span>Send e-waste through responsible disposal/recycling channels.</li>
+              <li><span class="check">✓</span>Maintain proper records of collected e-waste.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section" id="timeline">
+      <div class="section-container">
+        <div class="section-heading reveal">
+          <span class="section-tag">Campaign Journey</span>
+          <h2>From Collection to Recycling</h2>
+          <p>A simple process can make e-waste management more effective and accountable.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">01</div>
+            <div class="timeline-content">
+              <h3>Identify</h3>
+              <p>Identify obsolete, unused or damaged electronic equipment that is ready for disposal.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">02</div>
+            <div class="timeline-content">
+              <h3>Collect</h3>
+              <p>Bring identified e-waste to the designated collection point or campaign activity.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">03</div>
+            <div class="timeline-content">
+              <h3>Segregate</h3>
+              <p>Separate electronic waste from other waste streams for safe handling and processing.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">04</div>
+            <div class="timeline-content">
+              <h3>Record</h3>
+              <p>Maintain proper records of collected material, quantity and disposal activities.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">05</div>
+            <div class="timeline-content">
+              <h3>Recycle</h3>
+              <p>Ensure e-waste reaches appropriate recycling or disposal channels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-container">
+        <div class="gallery-cta reveal">
+          <div>
+            <h2>Campaign Photo Gallery</h2>
+            <p>
+              Explore photographs from E-Waste Day, awareness activities, collection drives
+              and other Special Campaign 6.0 initiatives.
+            </p>
+          </div>
+
+          <div class="gallery-buttons">
+            <button class="btn btn-yellow" onclick="openGallery()">📸 Open Photo Gallery</button>
+            <a href="https://docs.google.com/forms/" target="_blank" class="btn"
+              style="background:white;color:#08783d;">
+              📝 Submit / Participate
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>♻ E-Waste Initiative</h3>
+        <p>
+          Special Campaign 6.0 dedicated towards effective collection, segregation,
+          disposal and recycling of electronic waste.
+        </p>
+      </div>
+      <div>
+        <h4>Campaign</h4>
+        <ul>
+          <li>Special Campaign 6.0</li>
+          <li>E-Waste Day</li>
+          <li>Swachhata Hi Seva</li>
+          <li>Best Practices</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <ul>
+          <li>CCL</li>
+          <li>Amrapali-Chandragupt Area</li>
+          <li>Tandwa</li>
+          <li>Jharkhand</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Special Campaign 6.0 • E-Waste Management Initiative</div>
+  </footer>
+
+  <div class="modal" id="galleryModal">
+    <div class="modal-header">
+      <h2>📸 Campaign Gallery</h2>
+      <button class="close-modal" onclick="closeGallery()">×</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+
+  <div class="image-viewer" id="imageViewer">
+    <button class="viewer-close" onclick="closeImageViewer()">×</button>
+    <img id="viewerImage" src="" alt="Campaign Photo">
+  </div>
+
+  <script>
+    const galleryImages = [
+      { src: "img1.jpeg", title: "Special Campaign 6.0" },
+      { src: "img2.jpeg", title: "E-Waste Day" }
+
+      // Add more:
+      // {src:"images/photo3.jpg",title:"Collection Drive"},
+      // {src:"images/photo4.jpg",title:"Awareness Activity"}
+    ];
+
+    function openGallery() {
+      const modal = document.getElementById("galleryModal");
+      const gallery = document.getElementById("galleryGrid");
+      gallery.innerHTML = "";
+
+      galleryImages.forEach(image => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
+        item.innerHTML = `<img src="${image.src}" alt="${image.title}" loading="lazy">`;
+        item.addEventListener("click", () => openImageViewer(image.src));
+        gallery.appendChild(item);
+      });
+
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeGallery() {
+      document.getElementById("galleryModal").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function openImageViewer(src) {
+      document.getElementById("viewerImage").src = src;
+      document.getElementById("imageViewer").classList.add("active");
+    }
+
+    function closeImageViewer() {
+      document.getElementById("imageViewer").classList.remove("active");
+    }
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closeGallery();
+        closeImageViewer();
+      }
+    });
+
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navLinks = document.getElementById("navLinks");
+
+    mobileMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("mobile-open");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("mobile-open"));
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    document.getElementById("galleryModal").addEventListener("click", e => {
+      if (e.target === e.currentTarget) closeGallery();
+    });
+
+    document.getElementById("imageViewer").addEventListener("click", e => {
+      if (e.target === e.currentTarget) closeImageViewer();
+    });
+  </script>
+
+</body>
+
+</html> -->
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>E-Waste Day | Special Campaign 6.0</title>
+
+  <meta name="description"
+    content="Special Campaign 6.0 - E-Waste Management Initiative by CCL Amrapali-Chandragupt Area.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9f5;
+      color: #172b20;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --green: #08783d;
+      --dark-green: #075b31;
+      --yellow: #ffb800;
+      --orange: #f7941d;
+      --blue: #15366f;
+      --dark-blue: #0d2859;
+      --white: #fff;
+      --muted: #64706a;
+      --border: #e1e8e2;
+      --shadow: 0 15px 40px rgba(0, 0, 0, .08);
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 5%;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0, 0, 0, .06);
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--dark-green);
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--green), #35a853);
+      color: #fff;
+      font-size: 23px;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 10px;
+      color: #6c756f;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #263b31;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .mobile-menu {
+      display: none;
+      border: none;
+      background: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(8, 120, 61, .2);
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-green);
+      transform: translateY(-3px);
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: #222;
+    }
+
+    .btn-yellow:hover {
+      background: #ffa000;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: #fff;
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      padding: 145px 5% 80px;
+      background:
+        radial-gradient(circle at 90% 20%,
+          rgba(255, 184, 0, .2),
+          transparent 25%),
+        radial-gradient(circle at 10% 90%,
+          rgba(8, 120, 61, .12),
+          transparent 25%),
+        #f7faf4;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr .95fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff5d6;
+      color: #8a5a00;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: .98;
+      color: var(--blue);
+      margin-bottom: 22px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--orange);
+    }
+
+    .hero-text {
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-info {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .info-pill {
+      padding: 9px 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: #405048;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, .04);
+    }
+
+    .poster-frame {
+      background: #fff;
+      padding: 12px;
+      border-radius: 24px;
+      box-shadow: 0 25px 70px rgba(20, 50, 30, .16);
+      transform: rotate(1deg);
+      transition: .4s;
+    }
+
+    .poster-frame:hover {
+      transform: rotate(0) translateY(-5px);
+    }
+
+    .poster-frame img {
+      width: 100%;
+      display: block;
+      border-radius: 15px;
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -35px;
+      bottom: 35px;
+      background: #fff;
+      padding: 18px 20px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #e6f6ec;
+      font-size: 24px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 18px;
+      color: var(--green);
+    }
+
+    .floating-card span {
+      color: #6b756f;
+      font-size: 12px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    /* =========================
+       COMMON SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 5%;
+    }
+
+    .section-container {
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--green);
+      background: #e7f5eb;
+      padding: 7px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .section-heading h2 {
+      color: var(--blue);
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* =========================
+       DETAILS
+    ========================= */
+
+    .details {
+      background: #fff;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .detail-card {
+      padding: 30px;
+      border-radius: 22px;
+      background: #f9fbf9;
+      border: 1px solid var(--border);
+      transition: .35s;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: #c9dfcf;
+    }
+
+    .detail-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #e6f5ea;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .detail-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--dark-green);
+    }
+
+    .detail-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    /* =========================
+       CAMPAIGN HIGHLIGHTS
+       IMAGE GALLERY
+    ========================= */
+
+    .highlights {
+      background: var(--blue);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlights .section-heading h2 {
+      color: #fff;
+    }
+
+    .highlights .section-heading p {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .highlight-image {
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .15);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .15);
+      transition: .35s ease;
+    }
+
+    .highlight-image:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
+    }
+
+    .highlight-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .highlight-image:hover img {
+      transform: scale(1.06);
+    }
+
+    /* =========================
+       E-WASTE
+    ========================= */
+
+    .ewaste-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .ewaste-image img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .ewaste-content h2 {
+      color: var(--blue);
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 20px;
+    }
+
+    .ewaste-content>p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .ewaste-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .ewaste-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: #405048;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .check {
+      min-width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #dff3e5;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       TIMELINE
+    ========================= */
+
+    .timeline-section {
+      background: #f5f8f4;
+    }
+
+    .timeline {
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 25px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #cfe1d4;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-dot {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      border: 5px solid #e4f1e7;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-content {
+      background: #fff;
+      padding: 22px;
+      border-radius: 17px;
+      border: 1px solid var(--border);
+      flex: 1;
+    }
+
+    .timeline-content h3 {
+      color: var(--dark-green);
+      margin-bottom: 6px;
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       GALLERY CTA
+    ========================= */
+
+    .gallery-cta {
+      background: linear-gradient(135deg, #08783d, #0b5d36);
+      color: #fff;
+      border-radius: 30px;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      overflow: hidden;
+    }
+
+    .gallery-cta h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .gallery-cta p {
+      color: rgba(255, 255, 255, .75);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .gallery-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #071c35;
+      color: #fff;
+      padding: 50px 5% 25px;
+    }
+
+    .footer-grid {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .footer-brand h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.7;
+      max-width: 450px;
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+      color: #ffc42d;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      color: rgba(255, 255, 255, .65);
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    .copyright {
+      max-width: 1250px;
+      margin: 20px auto 0;
+      color: rgba(255, 255, 255, .45);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* =========================
+       GALLERY MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 15, 30, .88);
+      z-index: 2000;
+      display: none;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: block;
+    }
+
+    .modal-header {
+      max-width: 1200px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .modal-header h2 {
+      font-size: 30px;
+    }
+
+    .close-modal,
+    .viewer-close {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: #111;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      background: #fff;
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* =========================
+       IMAGE VIEWER
+    ========================= */
+
+    .image-viewer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .94);
+      z-index: 3000;
+      display: none;
+      place-items: center;
+      padding: 30px;
+    }
+
+    .image-viewer.active {
+      display: grid;
+    }
+
+    .image-viewer img {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .viewer-close {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons,
+      .hero-info {
+        justify-content: center;
+      }
+
+      .hero-image {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .highlight-image {
+        height: 260px;
+      }
+
+      .ewaste-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ewaste-image {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 760px) {
+
+      .navbar {
+        padding: 12px 5%;
+      }
+
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-links.mobile-open {
+        display: flex;
+        position: absolute;
+        top: 72px;
+        left: 5%;
+        right: 5%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      section {
+        padding: 65px 5%;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-image {
+        height: 240px;
+      }
+
+      .gallery-cta {
+        padding: 35px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .gallery-cta h2 {
+        font-size: 30px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .floating-card {
+        left: 10px;
+        bottom: 15px;
+      }
+    }
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width: 480px) {
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .highlight-image {
+        height: 220px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal {
+        padding: 15px;
+      }
+
+      .modal-header h2 {
+        font-size: 23px;
+      }
+
+      .gallery-cta {
+        border-radius: 20px;
+      }
+
+      .gallery-buttons {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .gallery-buttons .btn {
+        width: 100%;
+      }
+
+      .floating-card {
+        padding: 12px 14px;
+      }
+
+      .floating-card strong {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================= -->
+
+  <header class="navbar">
+
+    <div class="nav-inner">
+
+      <a href="#" class="brand">
+
+        <div class="brand-icon">♻</div>
+
+        <div>
+          E-WASTE
+          <small>Special Campaign 6.0</small>
+        </div>
+
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#campaign">Campaign</a></li>
+        <li><a href="#ewaste">E-Waste</a></li>
+        <li><a href="#timeline">Activities</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://docs.google.com/forms/" target="_blank" class="btn btn-primary">
+          Submit Form
+        </a>
+      </div>
+
+      <button class="mobile-menu" id="mobileMenu">
+        ☰
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-container">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-badge">
+            ♻ Special Campaign 6.0
+          </div>
+
+          <h1>
+            E-Waste
+            <span>Management</span>
+            Initiative
+          </h1>
+
+          <p class="hero-text">
+            A focused initiative under Special Campaign 6.0 for effective
+            collection, segregation, responsible disposal and recycling of
+            electronic waste across CCL Amrapali-Chandragupt Area.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a href="#campaign" class="btn btn-primary">
+              Explore Campaign →
+            </a>
+
+            <button class="btn btn-yellow" onclick="openGallery()">
+              📸 View Photo Gallery
+            </button>
+
+          </div>
+
+          <div class="hero-info">
+
+            <div class="info-pill">
+              📅 06 October 2026
+            </div>
+
+            <div class="info-pill">
+              📍 Amrapali-Chandragupt Area
+            </div>
+
+            <div class="info-pill">
+              ♻ E-Waste Day
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-image reveal">
+
+          <div class="poster-frame">
+
+            <img src="img1.jpeg" alt="Special Campaign 6.0 E-Waste Campaign">
+
+          </div>
+
+          <div class="floating-card">
+
+            <div class="floating-icon">
+              ♻️
+            </div>
+
+            <div>
+              <strong>Drop • Segregate • Recycle</strong>
+              <span>Responsible E-Waste Management</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAMPAIGN DETAILS
+    ========================= -->
+
+    <section class="details" id="campaign">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-tag">
+            About The Initiative
+          </span>
+
+          <h2>
+            Building a Cleaner & Greener Workplace
+          </h2>
+
+          <p>
+            Special Campaign 6.0 focuses on creating awareness and encouraging
+            responsible management of electronic waste. Every device we dispose
+            of responsibly contributes towards a cleaner environment.
+          </p>
+
+        </div>
+
+
+        <div class="details-grid">
+
+          <div class="detail-card reveal">
+
+            <div class="detail-icon">
+              📅
+            </div>
+
+            <h3>
+              Campaign Period
+            </h3>
+
+            <p>
+              The campaign implementation phase runs from
+              <strong>2nd October to 31st October</strong>,
+              with dedicated activities for e-waste collection and awareness.
+            </p>
+
+          </div>
+
+
+          <div class="detail-card reveal">
+
+            <div class="detail-icon">
+              ♻️
+            </div>
+
+            <h3>
+              E-Waste Collection
+            </h3>
+
+            <p>
+              Collect obsolete electronic equipment and ensure proper
+              segregation before sending it for responsible recycling
+              or disposal.
+            </p>
+
+          </div>
+
+
+          <div class="detail-card reveal">
+
+            <div class="detail-icon">
+              🌱
+            </div>
+
+            <h3>
+              Environmental Responsibility
+            </h3>
+
+            <p>
+              Reduce environmental impact by preventing electronic waste
+              from entering regular waste streams and promoting circular
+              resource use.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CAMPAIGN HIGHLIGHTS
+         4 IMAGES
+    ========================= -->
+
+    <section class="highlights">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-tag">
+            Key Focus Areas
+          </span>
+
+          <h2>
+            Campaign Highlights
+          </h2>
+
+          <p>
+            The campaign focuses on practical actions that support cleanliness,
+            resource efficiency and responsible waste management.
+          </p>
+
+        </div>
+
+
+        <div class="highlight-grid">
+
+          <div class="highlight-image reveal">
+            <img src="img3.jpeg" alt="E-Waste Disposal" loading="lazy">
+          </div>
+
+
+          <div class="highlight-image reveal">
+            <img src="img4.jpeg" alt="Scrap Disposal" loading="lazy">
+          </div>
+
+
+          <div class="highlight-image reveal">
+            <img src="img5.jpeg" alt="Space Optimization" loading="lazy">
+          </div>
+
+
+          <div class="highlight-image reveal">
+            <img src="img6.jpeg" alt="Record Management" loading="lazy">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         E-WASTE SECTION
+    ========================= -->
+
+    <section id="ewaste">
+
+      <div class="section-container">
+
+        <div class="ewaste-grid">
+
+          <div class="ewaste-image reveal">
+
+            <img src="img2.jpeg" alt="E-Waste Day Special Campaign 6.0" loading="lazy">
+
+          </div>
+
+
+          <div class="ewaste-content reveal">
+
+            <span class="section-tag">
+              Why E-Waste Matters
+            </span>
+
+            <h2>
+              Don't Let Old Electronics Become Tomorrow's Waste
+            </h2>
+
+            <p>
+              Electronic devices contain valuable materials as well as
+              components that can harm the environment if they are not
+              handled properly. Responsible collection and recycling
+              helps recover resources and reduces waste.
+            </p>
+
+
+            <ul class="ewaste-list">
+
+              <li>
+                <span class="check">✓</span>
+                Collect unused and obsolete electronic equipment.
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Keep e-waste separate from regular waste.
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Identify recyclable electronic materials.
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Send e-waste through responsible disposal/recycling channels.
+              </li>
+
+              <li>
+                <span class="check">✓</span>
+                Maintain proper records of collected e-waste.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TIMELINE
+    ========================= -->
+
+    <section class="timeline-section" id="timeline">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <span class="section-tag">
+            Campaign Journey
+          </span>
+
+          <h2>
+            From Collection to Recycling
+          </h2>
+
+          <p>
+            A simple process can make e-waste management more effective
+            and accountable.
+          </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              01
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Identify
+              </h3>
+
+              <p>
+                Identify obsolete, unused or damaged electronic equipment
+                that is ready for disposal.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              02
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Collect
+              </h3>
+
+              <p>
+                Bring identified e-waste to the designated collection
+                point or campaign activity.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              03
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Segregate
+              </h3>
+
+              <p>
+                Separate electronic waste from other waste streams
+                for safe handling and processing.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              04
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Record
+              </h3>
+
+              <p>
+                Maintain proper records of collected material,
+                quantity and disposal activities.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="timeline-item reveal">
+
+            <div class="timeline-dot">
+              05
+            </div>
+
+            <div class="timeline-content">
+
+              <h3>
+                Recycle
+              </h3>
+
+              <p>
+                Ensure e-waste reaches appropriate recycling
+                or disposal channels.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         GALLERY CTA
+    ========================= -->
+
+    <section id="gallery">
+
+      <div class="section-container">
+
+        <div class="gallery-cta reveal">
+
+          <div>
+
+            <h2>
+              Campaign Photo Gallery
+            </h2>
+
+            <p>
+              Explore photographs from E-Waste Day, awareness activities,
+              collection drives and other Special Campaign 6.0 initiatives.
+            </p>
+
+          </div>
+
+
+          <div class="gallery-buttons">
+
+            <button class="btn btn-yellow" onclick="openGallery()">
+              📸 Open Photo Gallery
+            </button>
+
+            <a href="https://docs.google.com/forms/" target="_blank" class="btn"
+              style="background:white;color:#08783d;">
+              📝 Submit / Participate
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+
+        <h3>
+          ♻ E-Waste Initiative
+        </h3>
+
+        <p>
+          Special Campaign 6.0 dedicated towards effective collection,
+          segregation, disposal and recycling of electronic waste.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Campaign
+        </h4>
+
+        <ul>
+
+          <li>
+            Special Campaign 6.0
+          </li>
+
+          <li>
+            E-Waste Day
+          </li>
+
+          <li>
+            Swachhata Hi Seva
+          </li>
+
+          <li>
+            Best Practices
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Location
+        </h4>
+
+        <ul>
+
+          <li>
+            CCL
+          </li>
+
+          <li>
+            Amrapali-Chandragupt Area
+          </li>
+
+          <li>
+            Tandwa
+          </li>
+
+          <li>
+            Jharkhand
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Special Campaign 6.0 • E-Waste Management Initiative
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       GALLERY MODAL
+  ========================= -->
+
+  <div class="modal" id="galleryModal">
+
+    <div class="modal-header">
+
+      <h2>
+        📸 Campaign Gallery
+      </h2>
+
+      <button class="close-modal" onclick="closeGallery()">
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+
+  </div>
+
+
+  <!-- =========================
+       IMAGE VIEWER
+  ========================= -->
+
+  <div class="image-viewer" id="imageViewer">
+
+    <button class="viewer-close" onclick="closeImageViewer()">
+      ×
+    </button>
+
+    <img id="viewerImage" src="" alt="Campaign Photo">
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    /* =========================
+       GALLERY IMAGES
+    ========================= */
+
+    const galleryImages = [
+
+      {
+        src: "img1.jpeg",
+        title: "Special Campaign 6.0"
+      },
+
+      {
+        src: "img2.jpeg",
+        title: "E-Waste Day"
+      },
+
+      {
+        src: "img3.jpeg",
+        title: "E-Waste Disposal"
+      },
+
+      {
+        src: "img4.jpeg",
+        title: "Scrap Disposal"
+      },
+
+      {
+        src: "img5.jpeg",
+        title: "Space Optimization"
+      },
+
+      {
+        src: "img6.jpeg",
+        title: "Record Management"
+      }
+
+      /*
+        Add more images here:
+
+        {
+          src: "img7.jpeg",
+          title: "Collection Drive"
+        },
+
+        {
+          src: "img8.jpeg",
+          title: "Awareness Activity"
+        }
+
+      */
+
+    ];
+
+
+    /* =========================
+       OPEN GALLERY
+    ========================= */
+
+    function openGallery() {
+
+      const modal =
+        document.getElementById("galleryModal");
+
+      const gallery =
+        document.getElementById("galleryGrid");
+
+      gallery.innerHTML = "";
+
+
+      galleryImages.forEach(image => {
+
+        const item =
+          document.createElement("div");
+
+        item.className =
+          "gallery-item";
+
+
+        item.innerHTML = `
+          <img
+            src="${image.src}"
+            alt="${image.title}"
+            loading="lazy"
+          >
+        `;
+
+
+        item.addEventListener(
+          "click",
+          () => openImageViewer(image.src)
+        );
+
+
+        gallery.appendChild(item);
+
+      });
+
+
+      modal.classList.add("active");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+
+    /* =========================
+       CLOSE GALLERY
+    ========================= */
+
+    function closeGallery() {
+
+      document
+        .getElementById("galleryModal")
+        .classList.remove("active");
+
+      document.body.style.overflow = "";
+
+    }
+
+
+    /* =========================
+       OPEN IMAGE VIEWER
+    ========================= */
+
+    function openImageViewer(src) {
+
+      document
+        .getElementById("viewerImage")
+        .src = src;
+
+      document
+        .getElementById("imageViewer")
+        .classList.add("active");
+
+    }
+
+
+    /* =========================
+       CLOSE IMAGE VIEWER
+    ========================= */
+
+    function closeImageViewer() {
+
+      document
+        .getElementById("imageViewer")
+        .classList.remove("active");
+
+    }
+
+
+    /* =========================
+       ESC KEY
+    ========================= */
+
+    document.addEventListener(
+      "keydown",
+      e => {
+
+        if (e.key === "Escape") {
+
+          closeGallery();
+
+          closeImageViewer();
+
+        }
+
+      }
+    );
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    mobileMenu.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle(
+          "mobile-open"
+        );
+
+      }
+    );
+
+
+    /* =========================
+       CLOSE MOBILE MENU
+       AFTER CLICK
+    ========================= */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove(
+              "mobile-open"
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+            }
+
+          });
+
+        },
+        {
+          threshold: .12
+        }
+      );
+
+
+    document
+      .querySelectorAll(".reveal")
+      .forEach(el => {
+
+        observer.observe(el);
+
+      });
+
+
+    /* =========================
+       CLOSE GALLERY
+       WHEN CLICKING OUTSIDE
+    ========================= */
+
+    document
+      .getElementById("galleryModal")
+      .addEventListener(
+        "click",
+        e => {
+
+          if (
+            e.target === e.currentTarget
+          ) {
+
+            closeGallery();
+
+          }
+
+        }
+      );
+
+
+    /* =========================
+       CLOSE IMAGE VIEWER
+       WHEN CLICKING OUTSIDE
+    ========================= */
+
+    document
+      .getElementById("imageViewer")
+      .addEventListener(
+        "click",
+        e => {
+
+          if (
+            e.target === e.currentTarget
+          ) {
+
+            closeImageViewer();
+
+          }
+
+        }
+      );
+
+  </script>
+
+</body>
+
+</html>
