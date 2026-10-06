@@ -1077,8 +1077,10 @@
       }
     }
 
+
     /* =========================
        CERTIFICATE GENERATOR
+       Exact reference-certificate style
     ========================= */
 
     .certificate-trigger {
@@ -1087,22 +1089,6 @@
       box-shadow: 0 12px 28px rgba(8, 120, 61, .25);
       position: relative;
       overflow: hidden;
-    }
-
-    .certificate-trigger::before {
-      content: "";
-      position: absolute;
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .12);
-      top: -45px;
-      right: -25px;
-      transition: .35s;
-    }
-
-    .certificate-trigger:hover::before {
-      transform: scale(1.5);
     }
 
     .certificate-trigger:hover {
@@ -1116,15 +1102,15 @@
       z-index: 2500;
       display: none;
       place-items: center;
-      padding: 24px;
-      background: rgba(4, 18, 28, .78);
+      padding: 20px;
+      background: rgba(4, 18, 28, .82);
       backdrop-filter: blur(10px);
       overflow-y: auto;
     }
 
     .certificate-modal.active {
       display: grid;
-      animation: certModalIn .3s ease;
+      animation: certModalIn .25s ease;
     }
 
     @keyframes certModalIn {
@@ -1138,18 +1124,17 @@
     }
 
     .certificate-panel {
-      width: min(980px, 100%);
-      max-height: 94vh;
+      width: min(1180px, 100%);
+      max-height: 96vh;
       overflow-y: auto;
       background: #fff;
-      border-radius: 28px;
-      box-shadow: 0 30px 90px rgba(0, 0, 0, .28);
-      border: 1px solid rgba(255, 255, 255, .5);
+      border-radius: 24px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .3);
       overflow-x: hidden;
     }
 
     .certificate-panel-head {
-      padding: 26px 30px;
+      padding: 24px 28px;
       color: #fff;
       background:
         radial-gradient(circle at 90% 10%, rgba(255, 184, 0, .28), transparent 30%),
@@ -1161,12 +1146,12 @@
     }
 
     .certificate-panel-head h2 {
-      font-size: 28px;
+      font-size: 26px;
       margin-bottom: 5px;
     }
 
     .certificate-panel-head p {
-      color: rgba(255, 255, 255, .78);
+      color: rgba(255, 255, 255, .8);
       font-size: 13px;
     }
 
@@ -1190,20 +1175,22 @@
     }
 
     .certificate-body {
-      padding: 30px;
+      padding: 26px;
       display: grid;
-      grid-template-columns: 330px 1fr;
-      gap: 30px;
+      grid-template-columns: 300px minmax(0, 1fr);
+      gap: 24px;
       align-items: start;
     }
 
     .certificate-form {
-      padding: 25px;
-      border-radius: 22px;
+      padding: 23px;
+      border-radius: 20px;
       background:
         radial-gradient(circle at 100% 0%, rgba(255, 184, 0, .15), transparent 35%),
         linear-gradient(145deg, #f5fbf7, #edf5ff);
       border: 1px solid #dfe9e3;
+      position: sticky;
+      top: 0;
     }
 
     .certificate-form .form-kicker {
@@ -1217,7 +1204,7 @@
 
     .certificate-form h3 {
       color: var(--blue);
-      font-size: 23px;
+      font-size: 22px;
       margin-bottom: 8px;
     }
 
@@ -1259,7 +1246,7 @@
 
     .certificate-help {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
       color: #607066;
       font-size: 11px;
@@ -1270,6 +1257,7 @@
     .certificate-help span {
       width: 22px;
       height: 22px;
+      flex: 0 0 22px;
       display: grid;
       place-items: center;
       border-radius: 50%;
@@ -1306,7 +1294,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 9px;
       color: #66756c;
       font-size: 11px;
       font-weight: 800;
@@ -1314,261 +1302,336 @@
       letter-spacing: 1px;
     }
 
+    /* 841.92 : 595.32 = exact A4 landscape ratio */
     .certificate-preview {
       position: relative;
-      aspect-ratio: 1.414 / 1;
-      min-height: 360px;
-      padding: 7px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #08783d, #ffb800 52%, #15366f);
+      width: 100%;
+      aspect-ratio: 841.92 / 595.32;
+      background: #fff;
+      border-radius: 4px;
       box-shadow: 0 18px 45px rgba(15, 42, 28, .16);
-    }
-
-    .certificate-paper {
-      position: relative;
-      height: 100%;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(255, 184, 0, .14), transparent 22%),
-        radial-gradient(circle at 12% 88%, rgba(8, 120, 61, .09), transparent 25%),
-        #fffdf7;
-      border: 2px solid rgba(8, 120, 61, .55);
-      padding: 5.5% 7%;
-      text-align: center;
-      color: #172b20;
     }
 
-    .certificate-paper::before,
-    .certificate-paper::after {
+    .certificate-reference {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      color: #1e2a39;
+      font-family: Georgia, "Times New Roman", serif;
+      overflow: hidden;
+    }
+
+    .certificate-reference::before,
+    .certificate-reference::after {
       content: "";
       position: absolute;
-      width: 110px;
-      height: 110px;
-      border: 1px solid rgba(8, 120, 61, .14);
-      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+      border: 2px solid #168344;
     }
 
-    .certificate-paper::before {
-      top: -65px;
-      left: -65px;
+    .certificate-reference::before {
+      inset: 4px;
     }
 
-    .certificate-paper::after {
-      bottom: -65px;
-      right: -65px;
+    .certificate-reference::after {
+      inset: 9px;
+      border-width: 1px;
     }
 
-    .certificate-mini-logo {
-      width: 42px;
-      height: 42px;
-      margin: 0 auto 6px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-size: 20px;
-      background: linear-gradient(135deg, #08783d, #15366f);
-      box-shadow: 0 5px 14px rgba(8, 120, 61, .18);
-    }
-
-    .certificate-paper .cert-org {
-      color: #075b31;
-      font-size: clamp(9px, 1.15vw, 13px);
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .certificate-paper .cert-title {
-      color: #15366f;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(25px, 4vw, 48px);
-      line-height: 1;
-      margin: 10px 0 5px;
-      font-weight: 700;
-    }
-
-    .certificate-paper .cert-subtitle {
-      color: #7a6a3a;
-      font-size: clamp(8px, 1vw, 11px);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .cert-presented {
-      color: #68756e;
-      font-size: clamp(8px, 1vw, 11px);
-      margin-top: 18px;
-      margin-bottom: 4px;
-    }
-
-    .cert-name {
-      color: #075b31;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(20px, 3.1vw, 38px);
-      font-weight: 700;
-      border-bottom: 1px solid rgba(8, 120, 61, .35);
-      display: inline-block;
-      min-width: 48%;
-      padding: 0 10px 5px;
-    }
-
-    .cert-designation {
-      margin-top: 5px;
-      color: #58655d;
-      font-size: clamp(8px, 1vw, 12px);
-      font-weight: 700;
-    }
-
-    .cert-description {
-      max-width: 650px;
-      margin: 15px auto 0;
-      color: #536159;
-      font-size: clamp(7px, .9vw, 10px);
-      line-height: 1.55;
-    }
-
-    .cert-footer {
+    .cert-img {
       position: absolute;
-      left: 7%;
-      right: 7%;
-      bottom: 5%;
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .cert-sign {
-      width: 27%;
-      min-width: 80px;
-    }
-
-    .cert-sign-line {
-      border-top: 1px solid #87948c;
-      margin-bottom: 4px;
-    }
-
-    .cert-sign strong {
+      object-fit: contain;
+      z-index: 2;
       display: block;
-      color: #294236;
-      font-size: clamp(7px, .85vw, 10px);
     }
 
-    .cert-sign span {
-      color: #79857e;
-      font-size: clamp(6px, .75vw, 9px);
+    .cert-ccl-logo {
+      left: 5.46%;
+      top: 4.67%;
+      width: 22.51%;
+      height: 18.05%;
     }
 
-    .cert-seal {
-      width: clamp(48px, 6vw, 70px);
-      height: clamp(48px, 6vw, 70px);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      font-size: clamp(8px, 1vw, 12px);
-      font-weight: 900;
+    .cert-coal-logo {
+      left: 72.75%;
+      top: 4.08%;
+      width: 22.69%;
+      height: 16.76%;
+    }
+
+    .cert-mascot {
+      left: 78.26%;
+      top: 38.09%;
+      width: 16.03%;
+      height: 22.93%;
+      border-radius: 14px;
+    }
+
+    .cert-swachhata {
+      left: 6.80%;
+      top: 82.39%;
+      width: 13.36%;
+      height: 8.19%;
+    }
+
+    .cert-qr {
+      left: 82.47%;
+      top: 80.69%;
+      width: 8.20%;
+      height: 11.59%;
+    }
+
+    .cert-top-text {
+      position: absolute;
+      z-index: 3;
+      top: 5.1%;
+      left: 26%;
+      right: 27%;
       text-align: center;
+    }
+
+    .cert-company {
+      color: #0b7d3c;
+      font-size: clamp(12px, 2.05vw, 27px);
       line-height: 1.05;
-      border: 4px double #fff;
-      outline: 2px solid #08783d;
-      background: linear-gradient(145deg, #08783d, #075b31);
-      box-shadow: 0 5px 15px rgba(8, 120, 61, .2);
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .cert-date {
-      width: 27%;
-      min-width: 80px;
-      text-align: right;
+    .cert-subsidiary {
+      margin-top: 2px;
+      font-size: clamp(7px, 1.05vw, 14px);
+      font-style: italic;
     }
 
-    .cert-date-line {
-      border-top: 1px solid #87948c;
-      margin-bottom: 4px;
+    .cert-area {
+      margin-top: 13px;
+      color: #202d3f;
+      font-size: clamp(11px, 1.75vw, 23px);
+      line-height: 1;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .cert-date strong {
+    .cert-location {
+      margin-top: 3px;
+      font-size: clamp(7px, .95vw, 13px);
+      font-style: italic;
+    }
+
+    .cert-heading {
+      position: absolute;
+      z-index: 3;
+      top: 25.5%;
+      left: 15%;
+      right: 15%;
+      text-align: center;
+      color: #c77c00;
+      font-size: clamp(18px, 3.15vw, 42px);
+      line-height: 1;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cert-campaign {
+      position: absolute;
+      z-index: 3;
+      top: 33.7%;
+      left: 15%;
+      right: 15%;
+      text-align: center;
+      color: #172b78;
+      font-size: clamp(8px, 1.35vw, 18px);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cert-campaign .date {
+      color: #08783d;
+    }
+
+    .cert-intro {
+      position: absolute;
+      z-index: 3;
+      top: 42.8%;
+      left: 30%;
+      right: 30%;
+      text-align: center;
+      font-size: clamp(8px, 1.05vw, 14px);
+    }
+
+    .cert-participant,
+    .cert-designation-line {
+      position: absolute;
+      z-index: 3;
+      left: 26.1%;
+      width: 43%;
+      text-align: left;
+      font-size: clamp(8px, 1.12vw, 15px);
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    .cert-participant {
+      top: 49.2%;
+    }
+
+    .cert-designation-line {
+      top: 54.1%;
+    }
+
+    .cert-participant strong,
+    .cert-designation-line strong {
+      font-weight: 400;
+      color: #5c5c5c;
+    }
+
+    .cert-value-line {
+      display: inline-block;
+      width: 62%;
+      border-bottom: 1px solid #28313d;
+      padding: 0 3px 2px;
+      font-style: normal;
+      font-weight: 700;
+      color: #273442;
+      text-align: center;
+      vertical-align: bottom;
+    }
+
+    .cert-description-ref {
+      position: absolute;
+      z-index: 3;
+      top: 58.2%;
+      left: 19%;
+      right: 22%;
+      text-align: center;
+      color: #1e2a39;
+      font-size: clamp(7px, .93vw, 12.5px);
+      line-height: 1.18;
+    }
+
+    .cert-signatures {
+      position: absolute;
+      z-index: 3;
+      left: 7.7%;
+      right: 7.7%;
+      bottom: 21.5%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1%;
+      text-align: center;
+    }
+
+    .cert-signature {
+      border-top: 1px solid #293441;
+      padding-top: 6px;
+      color: #1e2a39;
+      font-size: clamp(7px, .82vw, 11px);
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .cert-signature span {
       display: block;
-      color: #294236;
-      font-size: clamp(7px, .85vw, 10px);
+      font-weight: 400;
+      margin-top: 2px;
     }
 
-    .cert-date span {
-      color: #79857e;
-      font-size: clamp(6px, .75vw, 9px);
+    .cert-bottom-banner {
+      position: absolute;
+      z-index: 3;
+      left: 22.4%;
+      right: 22.1%;
+      bottom: 5.5%;
+      height: 14.0%;
+      background: #0aa9df;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4px 8px;
+    }
+
+    .cert-bottom-banner strong {
+      font-size: clamp(8px, 1.15vw, 15px);
+      line-height: 1.05;
+    }
+
+    .cert-bottom-banner em {
+      margin-top: 4px;
+      color: #ffdf58;
+      font-size: clamp(7px, .9vw, 12px);
+    }
+
+    .cert-image-note {
+      margin-top: 8px;
+      color: #66756c;
+      font-size: 10px;
+      line-height: 1.4;
     }
 
     .certificate-toast {
       position: fixed;
-      right: 24px;
+      left: 50%;
       bottom: 24px;
-      z-index: 4000;
-      background: #075b31;
-      color: #fff;
-      padding: 13px 18px;
-      border-radius: 12px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
-      font-size: 13px;
-      font-weight: 700;
+      z-index: 3000;
+      transform: translate(-50%, 20px);
       opacity: 0;
       pointer-events: none;
-      transform: translateY(15px);
-      transition: .3s;
+      background: #075b31;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+      transition: .25s;
     }
 
     .certificate-toast.show {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(-50%, 0);
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 950px) {
       .certificate-body {
         grid-template-columns: 1fr;
       }
 
       .certificate-form {
-        max-width: 600px;
-        width: 100%;
-        margin: auto;
+        position: static;
       }
 
       .certificate-preview {
-        min-height: 0;
+        min-width: 650px;
+      }
+
+      .certificate-preview-wrap {
+        overflow-x: auto;
+        padding-bottom: 5px;
       }
     }
 
-    @media (max-width: 520px) {
-      .certificate-modal {
-        padding: 10px;
+    @media (max-width: 700px) {
+      .certificate-panel {
+        border-radius: 18px;
       }
 
       .certificate-panel-head {
         padding: 20px;
       }
 
-      .certificate-panel-head h2 {
-        font-size: 22px;
-      }
-
       .certificate-body {
         padding: 18px;
-        gap: 22px;
       }
 
-      .certificate-form {
-        padding: 20px;
-      }
-
-      .certificate-paper {
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .cert-footer {
-        left: 5%;
-        right: 5%;
+      .certificate-preview {
+        min-width: 600px;
       }
     }
   </style>
@@ -2225,8 +2288,10 @@
       <div class="certificate-panel-head">
         <div>
           <h2 id="certificateHeading">🏆 Generate Your Certificate</h2>
-          <p>Create a professional participation certificate for Special Campaign 6.0.</p>
+          <p>Enter your name and designation. The certificate will match the supplied Special Campaign 6.0 certificate.
+          </p>
         </div>
+
         <button class="certificate-close" type="button" onclick="closeCertificateGenerator()"
           aria-label="Close certificate generator">×</button>
       </div>
@@ -2236,68 +2301,105 @@
         <div class="certificate-form">
           <div class="form-kicker">Certificate Details</div>
           <h3>Enter your details</h3>
-          <p>Your certificate will be generated instantly as a PDF using the details below.</p>
+          <p>Your name and designation will be placed directly into the original certificate layout.</p>
 
           <div class="certificate-field">
-            <label for="certificateName">Your Name</label>
-            <input id="certificateName" type="text" placeholder="Enter your name" autocomplete="name" maxlength="80">
+            <label for="certificateName">Enter your name</label>
+            <input id="certificateName" type="text" placeholder="Enter participant name" autocomplete="name"
+              maxlength="80">
           </div>
 
           <div class="certificate-field">
-            <label for="certificateDesignation">Your Designation</label>
-            <input id="certificateDesignation" type="text" placeholder="Enter your designation" maxlength="80">
+            <label for="certificateDesignation">Enter your designation</label>
+            <input id="certificateDesignation" type="text" placeholder="Enter designation / post" maxlength="80">
           </div>
 
           <div class="certificate-help">
             <span>✓</span>
-            <div>Use your official name and designation for the best-looking certificate.</div>
+            <div>Only these two fields are dynamic. The certificate text, date, layout and official labels remain the
+              same as the reference.</div>
           </div>
 
-          <button class="certificate-download" type="button" onclick="downloadCertificate()">
+          <button class="certificate-download" id="certificateDownloadBtn" type="button"
+            onclick="downloadCertificate()">
             ⬇ Download Certificate (PDF)
           </button>
+
+          <div class="cert-image-note">
+            <strong>Image paths:</strong> update the five paths inside
+            <code>CERTIFICATE_ASSETS</code> in the JavaScript.
+          </div>
         </div>
 
         <div class="certificate-preview-wrap">
           <div class="certificate-preview-label">
             <span>Live Certificate Preview</span>
-            <span>Special Campaign 6.0</span>
+            <span>Special Campaign 6.0 • 06-10-2026</span>
           </div>
 
-          <div class="certificate-preview">
-            <div class="certificate-paper">
+          <div class="certificate-preview" id="certificatePreview">
 
-              <div class="certificate-mini-logo">♻</div>
-              <div class="cert-org">CCL • Amrapali-Chandragupt Area</div>
-              <div class="cert-title">Certificate</div>
-              <div class="cert-subtitle">of Participation</div>
+            <div class="certificate-reference">
 
-              <div class="cert-presented">This certificate is proudly presented to</div>
-              <div class="cert-name" id="previewName">Your Name</div>
-              <div class="cert-designation" id="previewDesignation">Your Designation</div>
+              <!-- Image paths are controlled from CERTIFICATE_ASSETS -->
+              <img class="cert-img cert-ccl-logo" id="previewCclLogo" alt="Central Coalfields Limited logo">
+              <img class="cert-img cert-coal-logo" id="previewCoalLogo" alt="Ministry of Coal logo">
+              <img class="cert-img cert-mascot" id="previewMascot" alt="Campaign mascot">
+              <img class="cert-img cert-swachhata" id="previewSwachhata" alt="Swachhata Hi Seva logo">
+              <img class="cert-img cert-qr" id="previewQr" alt="Certificate QR code">
 
-              <p class="cert-description">
-                For active participation and support in the
-                <strong>E-Waste Management Initiative</strong> under
-                Special Campaign 6.0, contributing towards responsible
-                collection, segregation, recycling and sustainable
-                electronic waste management.
-              </p>
+              <div class="cert-top-text">
+                <div class="cert-company">CENTRAL COALFIELDS LIMITED</div>
+                <div class="cert-subsidiary">(A Subsidiary of Coal India Limited) •</div>
+                <div class="cert-area">AMRAPALI–CHANDRAGUPT AREA</div>
+                <div class="cert-location">Honhe, Tandwa, Chatra, Jharkhand</div>
+              </div>
 
-              <div class="cert-footer">
-                <div class="cert-sign">
-                  <div class="cert-sign-line"></div>
-                  <strong>Campaign Coordinator</strong>
-                  <span>E-Waste Initiative</span>
+              <div class="cert-heading">CERTIFICATE OF PARTICIPATION</div>
+
+              <div class="cert-campaign">
+                Special Campaign 6.0 | E-Waste Collection Drive:
+                <span class="date">Date:</span> 06-10-2026
+              </div>
+
+              <div class="cert-intro">This is to certify that</div>
+
+              <div class="cert-participant">
+                <strong>Participant Name:</strong>
+                <span class="cert-value-line" id="previewName">______________________________</span>
+              </div>
+
+              <div class="cert-designation-line">
+                <strong>Designation / Post:</strong>
+                <span class="cert-value-line" id="previewDesignation">______________________________</span>
+              </div>
+
+              <div class="cert-description-ref">
+                has actively participated in the E-Waste Collection, Segregation and Disposal Drive<br>
+                organised under Special Campaign 6.0 (Swachhata Hi Seva) at Amrapali–Chandragupt<br>
+                Area, Central Coalfields Limited, and contributed towards the responsible handling of<br>
+                electronic waste. We appreciate the efforts and commitment shown.
+              </div>
+
+              <div class="cert-signatures">
+                <div class="cert-signature">
+                  Assistant Nodal Officer, SC 6.0
+                  <span>Amrapali–Chandragupt Area</span>
                 </div>
-
-                <div class="cert-seal">E-WASTE<br>6.0</div>
-
-                <div class="cert-date">
-                  <div class="cert-date-line"></div>
-                  <strong>06 October 2026</strong>
-                  <span>Certificate Date</span>
+                <div class="cert-signature">
+                  Nodal Officer, SC 6.0
+                  <span>Amrapali–Chandragupt Area</span>
                 </div>
+                <div class="cert-signature">
+                  General Manager
+                  <span>Amrapali–Chandragupt Area</span>
+                </div>
+              </div>
+
+              <div class="cert-bottom-banner">
+                <strong>“Swachhata Hi Seva” – Every device handed over responsibly keeps our<br>
+                  environment cleaner.</strong>
+                <em>Reduce • Reuse • Recycle – Act today, impact tomorrow.</em>
               </div>
 
             </div>
@@ -2357,15 +2459,56 @@
 
   <script>
 
+
     /* =========================
        CERTIFICATE GENERATOR
+       Reference PDF matched in-browser
     ========================= */
+
+    /*
+     * SET YOUR OWN IMAGE PATHS HERE.
+     * Example:
+     * "assets/ccl-logo.png"
+     * "images/certificate/ministry-of-coal.png"
+     */
+    const CERTIFICATE_ASSETS = {
+      cclLogo: "assets/ccl-logo.jpg",
+      coalLogo: "assets/ministry-of-coal.jpg",
+      mascot: "assets/ccl-mascot.jpeg",
+      swachhata: "assets/swachhata-hi-seva.jpg",
+      qr: "assets/certificate-qr.png"
+    };
 
     const certificateModal = document.getElementById("certificateModal");
     const certificateNameInput = document.getElementById("certificateName");
     const certificateDesignationInput = document.getElementById("certificateDesignation");
     const previewName = document.getElementById("previewName");
     const previewDesignation = document.getElementById("previewDesignation");
+
+    function applyCertificateAssetPaths() {
+      const map = {
+        previewCclLogo: CERTIFICATE_ASSETS.cclLogo,
+        previewCoalLogo: CERTIFICATE_ASSETS.coalLogo,
+        previewMascot: CERTIFICATE_ASSETS.mascot,
+        previewSwachhata: CERTIFICATE_ASSETS.swachhata,
+        previewQr: CERTIFICATE_ASSETS.qr
+      };
+
+      Object.entries(map).forEach(([id, src]) => {
+        const image = document.getElementById(id);
+        if (!image) return;
+
+        image.src = src;
+
+        image.onerror = () => {
+          image.style.display = "none";
+        };
+
+        image.onload = () => {
+          image.style.display = "block";
+        };
+      });
+    }
 
     function openCertificateGenerator() {
       certificateModal.classList.add("active");
@@ -2385,8 +2528,9 @@
       const name = certificateNameInput.value.trim();
       const designation = certificateDesignationInput.value.trim();
 
-      previewName.textContent = name || "Your Name";
-      previewDesignation.textContent = designation || "Your Designation";
+      previewName.textContent = name || "______________________________";
+      previewDesignation.textContent =
+        designation || "______________________________";
     }
 
     certificateNameInput.addEventListener("input", updateCertificatePreview);
@@ -2400,10 +2544,46 @@
       clearTimeout(window.certificateToastTimer);
       window.certificateToastTimer = setTimeout(() => {
         toast.classList.remove("show");
-      }, 3000);
+      }, 3500);
     }
 
-    function downloadCertificate() {
+    function waitForImage(image, timeout = 5000) {
+      return new Promise((resolve) => {
+        if (!image || !image.src) {
+          resolve(null);
+          return;
+        }
+
+        // IMPORTANT: if the browser has already finished loading/failing the
+        // image, attaching onload/onerror afterwards can leave the Promise
+        // pending forever. This was the reason the button could stay on
+        // “Preparing PDF...”.
+        if (image.complete) {
+          resolve(image.naturalWidth > 0 ? image : null);
+          return;
+        }
+
+        let settled = false;
+        const finish = (value) => {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
+          image.onload = null;
+          image.onerror = null;
+          resolve(value);
+        };
+
+        const timer = setTimeout(() => finish(null), timeout);
+        image.onload = () => finish(image.naturalWidth > 0 ? image : null);
+        image.onerror = () => finish(null);
+      });
+    }
+
+    /*
+     * Draw the certificate as one high-resolution image and put that image
+     * into a minimal PDF. This avoids jsPDF/CDN loading problems completely.
+     */
+    async function downloadCertificate() {
       const name = certificateNameInput.value.trim();
       const designation = certificateDesignationInput.value.trim();
 
@@ -2417,15 +2597,26 @@
         return;
       }
 
-      /*
-       * Reliable PDF generator:
-       * This creates a real A4 PDF directly in the browser.
-       * It does not depend on jsPDF, CDN loading, canvas or external files.
-       */
+      const button = document.getElementById("certificateDownloadBtn");
+      const oldText = button.innerHTML;
+      button.disabled = true;
+      button.innerHTML = "⏳ Preparing PDF...";
+
       try {
-        const pdf = createCertificatePDF(name, designation);
-        const blob = new Blob([pdf], { type: "application/pdf" });
-        const url = URL.createObjectURL(blob);
+        // Everything below is local/browser-only. No CDN or external PDF
+        // library is required. Missing images are simply skipped.
+        const canvasPromise = createReferenceCertificateCanvas(name, designation);
+        const canvas = await Promise.race([
+          canvasPromise,
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("Certificate generation timed out")), 12000)
+          )
+        ]);
+        const jpegDataUrl = canvas.toDataURL("image/jpeg", 0.92);
+        const pdfBytes = createImagePDF(jpegDataUrl, canvas.width, canvas.height);
+
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        if (!blob.size) throw new Error("Empty PDF generated");
 
         const safeName = name
           .normalize("NFKD")
@@ -2434,226 +2625,498 @@
           .replace(/^-+|-+$/g, "")
           .toLowerCase() || "participant";
 
+        const fileName = `SC6-EWaste-Certificate-${safeName}.pdf`;
+
+        // Use the browser download API first. The hidden anchor is created
+        // synchronously in the same function that started from the click.
+        const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
-        link.href = url;
-        link.download = `E-Waste-Certificate-${safeName}.pdf`;
         link.style.display = "none";
+        link.href = url;
+        link.download = fileName;
         document.body.appendChild(link);
         link.click();
         link.remove();
 
-        setTimeout(() => URL.revokeObjectURL(url), 3000);
-        showCertificateToast("✓ Certificate downloaded successfully");
+        // Keep the object URL alive briefly so Chrome/Edge finish the download.
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+
+        showCertificateToast("✓ Certificate PDF downloaded successfully");
       } catch (error) {
         console.error("Certificate PDF error:", error);
-        showCertificateToast("Unable to create PDF. Please try again.");
+        showCertificateToast(
+          "PDF could not be generated. Check the image paths in CERTIFICATE_ASSETS."
+        );
+      } finally {
+        button.disabled = false;
+        button.innerHTML = oldText;
       }
     }
 
-    function pdfSafeText(value) {
-      return String(value || "")
-        .normalize("NFKD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^\x20-\x7E]/g, "?")
-        .replace(/\\/g, "\\\\")
-        .replace(/\(/g, "\\(")
-        .replace(/\)/g, "\\)");
+    function certificateCanvasText(ctx, text, x, y, font, color, align = "center") {
+      ctx.font = font;
+      ctx.fillStyle = color;
+      ctx.textAlign = align;
+      ctx.textBaseline = "alphabetic";
+      ctx.fillText(text, x, y);
     }
 
-    function pdfEscapeText(value) {
-      return `(${pdfSafeText(value)})`;
-    }
+    function fitText(ctx, text, maxWidth, initialSize, family = "Georgia") {
+      let size = initialSize;
 
-    function pdfTextWidth(value, size) {
-      // Approximate Helvetica width; good enough for centered certificate text.
-      return pdfSafeText(value).length * size * 0.52;
-    }
-
-    function pdfCenteredText(lines, text, x, y, size, font = "F1") {
-      const safe = pdfSafeText(text);
-      const width = pdfTextWidth(safe, size);
-      const startX = x - (width / 2);
-      lines.push(`BT /${font} ${size} Tf ${startX.toFixed(2)} ${y.toFixed(2)} Td ${pdfEscapeText(safe)} Tj ET`);
-    }
-
-    function pdfWrapText(text, maxChars) {
-      const words = String(text).split(/\s+/);
-      const lines = [];
-      let line = "";
-
-      words.forEach(word => {
-        const candidate = line ? `${line} ${word}` : word;
-        if (candidate.length > maxChars && line) {
-          lines.push(line);
-          line = word;
-        } else {
-          line = candidate;
+      while (size > 10) {
+        ctx.font = `700 ${size}px ${family}`;
+        if (ctx.measureText(text).width <= maxWidth) {
+          return size;
         }
-      });
-
-      if (line) lines.push(line);
-      return lines;
-    }
-
-    function createCertificatePDF(name, designation) {
-      const W = 841.89; // A4 landscape width in points
-      const H = 595.28; // A4 landscape height in points
-      const commands = [];
-
-      // Background
-      commands.push("0.98 0.99 0.97 rg 0 0 841.89 595.28 re f");
-
-      // Top green / orange / blue bands
-      commands.push("0.03 0.36 0.19 rg 0 570 841.89 25.28 re f");
-      commands.push("0.03 0.47 0.24 rg 0 562 841.89 8 re f");
-      commands.push("1 0.72 0 rg 0 14 841.89 7 re f");
-      commands.push("0.08 0.21 0.44 rg 0 0 841.89 14 re f");
-
-      // Main borders
-      commands.push("0.03 0.47 0.24 RG 2.5 w 34 43 774 505 re S");
-      commands.push("1 0.72 0 RG 1 w 45 54 752 483 re S");
-
-      // Decorative corner lines
-      commands.push("0.03 0.47 0.24 RG 1.4 w");
-      commands.push("62 88 m 145 88 l S 62 88 m 62 171 l S");
-      commands.push("780 88 m 697 88 l S 780 88 m 780 171 l S");
-      commands.push("62 503 m 145 503 l S 62 503 m 62 420 l S");
-      commands.push("780 503 m 697 503 l S 780 503 m 780 420 l S");
-
-      // Very light watermark
-      commands.push("0.92 0.95 0.92 rg");
-      pdfCenteredText(commands, "E-WASTE", W / 2, 326, 62, "F2");
-
-      // Organization
-      commands.push("0.03 0.36 0.19 rg");
-      pdfCenteredText(commands, "CCL - AMRAPALI-CHANDRAGUPT AREA", W / 2, 465, 18, "F2");
-
-      // Certificate heading
-      commands.push("0.08 0.21 0.44 rg");
-      pdfCenteredText(commands, "CERTIFICATE", W / 2, 408, 46, "F3");
-
-      commands.push("0.48 0.42 0.23 rg");
-      pdfCenteredText(commands, "OF PARTICIPATION", W / 2, 389, 13, "F2");
-
-      // Presented to
-      commands.push("0.39 0.44 0.41 rg");
-      pdfCenteredText(commands, "This certificate is proudly presented to", W / 2, 356, 12, "F1");
-
-      // Participant name
-      commands.push("0.03 0.36 0.19 rg");
-      let displayName = pdfSafeText(name);
-      if (displayName.length > 38) displayName = displayName.slice(0, 38) + "...";
-      let nameSize = 30;
-      if (displayName.length > 26) nameSize = 24;
-      if (displayName.length > 34) nameSize = 20;
-      pdfCenteredText(commands, displayName, W / 2, 325, nameSize, "F3");
-
-      const nameLineWidth = Math.min(Math.max(pdfTextWidth(displayName, nameSize) + 35, 185), 480);
-      commands.push(`0.03 0.47 0.24 RG 0.8 w ${(W - nameLineWidth) / 2} 316 m ${(W + nameLineWidth) / 2} 316 l S`);
-
-      // Designation
-      commands.push("0.33 0.38 0.35 rg");
-      let displayDesignation = pdfSafeText(designation);
-      if (displayDesignation.length > 55) displayDesignation = displayDesignation.slice(0, 55) + "...";
-      let designationSize = displayDesignation.length > 42 ? 10 : 12;
-      pdfCenteredText(commands, displayDesignation, W / 2, 294, designationSize, "F2");
-
-      // Description
-      commands.push("0.31 0.36 0.33 rg");
-      const description =
-        "For active participation and support in the E-Waste Management Initiative under Special Campaign 6.0, contributing towards responsible collection, segregation, recycling and sustainable electronic waste management.";
-      const descLines = pdfWrapText(description, 100);
-      descLines.forEach((line, index) => {
-        pdfCenteredText(commands, line, W / 2, 264 - (index * 17), 10.5, "F1");
-      });
-
-      // Seal
-      commands.push("0.03 0.47 0.24 rg 0.03 0.47 0.24 RG");
-      commands.push("0.03 0.47 0.24 rg 421 115 0 0 m");
-      // Seal circles (Bezier approximation - supported by every PDF viewer)
-      const k = 0.5522848;
-      const cx = 421, cy = 145, r = 17.5;
-      commands.push(
-        `0.03 0.47 0.24 rg ${cx + r} ${cy} m ` +
-        `${cx + r} ${cy + k * r} ${cx + k * r} ${cy + r} ${cx} ${cy + r} c ` +
-        `${cx - k * r} ${cy + r} ${cx - r} ${cy + k * r} ${cx - r} ${cy} c ` +
-        `${cx - r} ${cy - k * r} ${cx - k * r} ${cy - r} ${cx} ${cy - r} c ` +
-        `${cx + k * r} ${cy - r} ${cx + r} ${cy - k * r} ${cx + r} ${cy} c f`
-      );
-      const r2 = 13;
-      commands.push(
-        `1 1 1 RG 1.5 w ${cx + r2} ${cy} m ` +
-        `${cx + r2} ${cy + k * r2} ${cx + k * r2} ${cy + r2} ${cx} ${cy + r2} c ` +
-        `${cx - k * r2} ${cy + r2} ${cx - r2} ${cy + k * r2} ${cx - r2} ${cy} c ` +
-        `${cx - r2} ${cy - k * r2} ${cx - k * r2} ${cy - r2} ${cx} ${cy - r2} c ` +
-        `${cx + k * r2} ${cy - r2} ${cx + r2} ${cy - k * r2} ${cx + r2} ${cy} c S`
-      );
-      commands.push("1 1 1 rg");
-      pdfCenteredText(commands, "E-WASTE", W / 2, 147, 8, "F2");
-      pdfCenteredText(commands, "CAMPAIGN 6.0", W / 2, 135, 7, "F2");
-
-      // Signature
-      commands.push("0.51 0.56 0.53 RG 0.7 w 100 104 m 250 104 l S");
-      commands.push("0.16 0.26 0.21 rg");
-      pdfCenteredText(commands, "Campaign Coordinator", 175, 88, 11, "F2");
-      commands.push("0.47 0.52 0.49 rg");
-      pdfCenteredText(commands, "E-Waste Initiative", 175, 74, 9, "F1");
-
-      // Date
-      commands.push("0.51 0.56 0.53 RG 0.7 w 592 104 m 742 104 l S");
-      commands.push("0.16 0.26 0.21 rg");
-      pdfCenteredText(commands, "06 October 2026", 667, 88, 11, "F2");
-      commands.push("0.47 0.52 0.49 rg");
-      pdfCenteredText(commands, "Certificate Date", 667, 74, 9, "F1");
-
-      // Footer reference
-      commands.push("0.59 0.62 0.60 rg");
-      pdfCenteredText(
-        commands,
-        "Special Campaign 6.0 - E-Waste Management Initiative - CCL Amrapali-Chandragupt Area",
-        W / 2,
-        60,
-        8,
-        "F1"
-      );
-
-      const content = commands.join("\n");
-
-      // PDF objects
-      const objects = [];
-      objects.push("<< /Type /Catalog /Pages 2 0 R >>");
-      objects.push("<< /Type /Pages /Kids [3 0 R] /Count 1 >>");
-      objects.push(
-        `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] ` +
-        `/Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> ` +
-        `/Contents 7 0 R >>`
-      );
-      objects.push("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>");
-      objects.push("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>");
-      objects.push("<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold >>");
-      objects.push(`<< /Length ${content.length} >>\nstream\n${content}\nendstream`);
-
-      let pdf = "%PDF-1.4\n% E-Waste Campaign Certificate\n";
-      const offsets = [0];
-
-      objects.forEach((obj, index) => {
-        offsets[index + 1] = pdf.length;
-        pdf += `${index + 1} 0 obj\n${obj}\nendobj\n`;
-      });
-
-      const xrefOffset = pdf.length;
-      pdf += `xref\n0 ${objects.length + 1}\n`;
-      pdf += "0000000000 65535 f \n";
-
-      for (let i = 1; i <= objects.length; i++) {
-        pdf += `${String(offsets[i]).padStart(10, "0")} 00000 n \n`;
+        size -= 1;
       }
 
-      pdf += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\n`;
-      pdf += `startxref\n${xrefOffset}\n%%EOF`;
-
-      return new TextEncoder().encode(pdf);
+      return size;
     }
+
+    function roundedRect(ctx, x, y, width, height, radius) {
+      const r = Math.min(radius, width / 2, height / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + width, y, x + width, y + height, r);
+      ctx.arcTo(x + width, y + height, x, y + height, r);
+      ctx.arcTo(x, y + height, x, y, r);
+      ctx.arcTo(x, y, x + width, y, r);
+      ctx.closePath();
+    }
+
+    function drawAssetCover(ctx, image, x, y, w, h, radius = 0) {
+      if (!image || !image.naturalWidth) return;
+
+      ctx.save();
+
+      if (radius > 0) {
+        roundedRect(ctx, x, y, w, h, radius);
+        ctx.clip();
+      }
+
+      const scale = Math.max(w / image.naturalWidth, h / image.naturalHeight);
+      const dw = image.naturalWidth * scale;
+      const dh = image.naturalHeight * scale;
+      const dx = x + (w - dw) / 2;
+      const dy = y + (h - dh) / 2;
+
+      ctx.drawImage(image, dx, dy, dw, dh);
+      ctx.restore();
+    }
+
+    function drawAssetContain(ctx, image, x, y, w, h) {
+      if (!image || !image.naturalWidth) return;
+
+      const scale = Math.min(w / image.naturalWidth, h / image.naturalHeight);
+      const dw = image.naturalWidth * scale;
+      const dh = image.naturalHeight * scale;
+
+      ctx.drawImage(
+        image,
+        x + (w - dw) / 2,
+        y + (h - dh) / 2,
+        dw,
+        dh
+      );
+    }
+
+    async function createReferenceCertificateCanvas(name, designation) {
+      const S = 2;
+      const W = 841.92;
+      const H = 595.32;
+
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(W * S);
+      canvas.height = Math.round(H * S);
+
+      const ctx = canvas.getContext("2d", { alpha: false });
+      ctx.scale(S, S);
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+
+      // White page
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, W, H);
+
+      // Exact green double border
+      ctx.strokeStyle = "#168344";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(4, 4, W - 8, H - 8);
+
+      ctx.lineWidth = 1;
+      ctx.strokeRect(9, 9, W - 18, H - 18);
+
+      // Load configured assets
+      const assets = await Promise.all([
+        waitForImage(document.getElementById("previewCclLogo")),
+        waitForImage(document.getElementById("previewCoalLogo")),
+        waitForImage(document.getElementById("previewMascot")),
+        waitForImage(document.getElementById("previewSwachhata")),
+        waitForImage(document.getElementById("previewQr"))
+      ]);
+
+      const [cclLogo, coalLogo, mascot, swachhata, qr] = assets;
+
+      // Top logos
+      drawAssetContain(ctx, cclLogo, 46, 28, 190, 108);
+      drawAssetContain(ctx, coalLogo, 609.5, 24.3, 191, 100.5);
+
+      // Header
+      certificateCanvasText(
+        ctx,
+        "CENTRAL COALFIELDS LIMITED",
+        W / 2,
+        49,
+        "700 18px Georgia, 'Times New Roman', serif",
+        "#0b7d3c"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "(A Subsidiary of Coal India Limited) •",
+        W / 2,
+        65,
+        "italic 11px Georgia, 'Times New Roman', serif",
+        "#202d3f"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "AMRAPALI–CHANDRAGUPT AREA",
+        W / 2,
+        91,
+        "700 16px Georgia, 'Times New Roman', serif",
+        "#202d3f"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "Honhe, Tandwa, Chatra, Jharkhand",
+        W / 2,
+        106,
+        "italic 10px Georgia, 'Times New Roman', serif",
+        "#202d3f"
+      );
+
+      // Main title
+      certificateCanvasText(
+        ctx,
+        "CERTIFICATE OF PARTICIPATION",
+        W / 2,
+        173,
+        "700 27px Georgia, 'Times New Roman', serif",
+        "#c77c00"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "Special Campaign 6.0 | E-Waste Collection Drive:",
+        400,
+        195,
+        "700 12px Georgia, 'Times New Roman', serif",
+        "#172b78",
+        "right"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "Date:",
+        545,
+        195,
+        "700 12px Georgia, 'Times New Roman', serif",
+        "#08783d",
+        "left"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "06-10-2026",
+        577,
+        195,
+        "700 12px Georgia, 'Times New Roman', serif",
+        "#202d3f",
+        "left"
+      );
+
+      // Intro
+      certificateCanvasText(
+        ctx,
+        "This is to certify that",
+        W / 2,
+        232,
+        "14px Georgia, 'Times New Roman', serif",
+        "#202d3f"
+      );
+
+      // Dynamic fields
+      const safeName = name.slice(0, 55);
+      const safeDesignation = designation.slice(0, 55);
+
+      certificateCanvasText(
+        ctx,
+        "Participant Name:",
+        220,
+        256,
+        "italic 12px Georgia, 'Times New Roman', serif",
+        "#5c5c5c",
+        "left"
+      );
+
+      certificateCanvasText(
+        ctx,
+        safeName,
+        338,
+        256,
+        `700 ${fitText(ctx, safeName, 335, 12)}px Georgia, 'Times New Roman', serif`,
+        "#273442",
+        "left"
+      );
+
+      ctx.strokeStyle = "#28313d";
+      ctx.lineWidth = 0.7;
+      ctx.beginPath();
+      ctx.moveTo(338, 259);
+      ctx.lineTo(580, 259);
+      ctx.stroke();
+
+      certificateCanvasText(
+        ctx,
+        "Designation / Post:",
+        220,
+        278,
+        "italic 12px Georgia, 'Times New Roman', serif",
+        "#5c5c5c",
+        "left"
+      );
+
+      certificateCanvasText(
+        ctx,
+        safeDesignation,
+        338,
+        278,
+        `700 ${fitText(ctx, safeDesignation, 335, 12)}px Georgia, 'Times New Roman', serif`,
+        "#273442",
+        "left"
+      );
+
+      ctx.beginPath();
+      ctx.moveTo(338, 281);
+      ctx.lineTo(580, 281);
+      ctx.stroke();
+
+      // Main body text - EXACT SOURCE TEXT
+      const bodyLines = [
+        "has actively participated in the E-Waste Collection, Segregation and Disposal Drive",
+        "organised under Special Campaign 6.0 (Swachhata Hi Seva) at Amrapali–Chandragupt",
+        "Area, Central Coalfields Limited, and contributed towards the responsible handling of",
+        "electronic waste. We appreciate the efforts and commitment shown."
+      ];
+
+      bodyLines.forEach((line, index) => {
+        certificateCanvasText(
+          ctx,
+          line,
+          405,
+          307 + index * 14,
+          "10.5px Georgia, 'Times New Roman', serif",
+          "#1e2a39"
+        );
+      });
+
+      // Mascot at right, same approximate position as source PDF
+      drawAssetCover(ctx, mascot, 658.45, 226.78, 135, 136.5, 14);
+
+      // Signatures
+      const signatureXs = [182, 422, 662];
+
+      ctx.strokeStyle = "#293441";
+      ctx.lineWidth = 0.8;
+
+      signatureXs.forEach((x) => {
+        ctx.beginPath();
+        ctx.moveTo(x - 115, 432);
+        ctx.lineTo(x + 115, 432);
+        ctx.stroke();
+      });
+
+      certificateCanvasText(
+        ctx, "Assistant Nodal Officer, SC 6.0",
+        signatureXs[0], 447,
+        "700 10px Georgia, 'Times New Roman', serif", "#202d3f"
+      );
+      certificateCanvasText(
+        ctx, "Amrapali–Chandragupt Area",
+        signatureXs[0], 458,
+        "10px Georgia, 'Times New Roman', serif", "#202d3f"
+      );
+
+      certificateCanvasText(
+        ctx, "Nodal Officer, SC 6.0",
+        signatureXs[1], 447,
+        "700 10px Georgia, 'Times New Roman', serif", "#202d3f"
+      );
+      certificateCanvasText(
+        ctx, "Amrapali–Chandragupt Area",
+        signatureXs[1], 458,
+        "10px Georgia, 'Times New Roman', serif", "#202d3f"
+      );
+
+      certificateCanvasText(
+        ctx, "General Manager",
+        signatureXs[2], 447,
+        "700 10px Georgia, 'Times New Roman', serif", "#202d3f"
+      );
+      certificateCanvasText(
+        ctx, "Amrapali–Chandragupt Area",
+        signatureXs[2], 458,
+        "10px Georgia, 'Times New Roman', serif", "#202d3f"
+      );
+
+      // Bottom blue message panel
+      ctx.fillStyle = "#0aa9df";
+      ctx.fillRect(186, 485, 700 - 186, 75);
+
+      certificateCanvasText(
+        ctx,
+        "“Swachhata Hi Seva” – Every device handed over responsibly keeps our",
+        485,
+        505,
+        "700 11px Georgia, 'Times New Roman', serif",
+        "#ffffff"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "environment cleaner.",
+        485,
+        518,
+        "700 11px Georgia, 'Times New Roman', serif",
+        "#ffffff"
+      );
+
+      certificateCanvasText(
+        ctx,
+        "Reduce • Reuse • Recycle – Act today, impact tomorrow.",
+        485,
+        533,
+        "italic 9px Georgia, 'Times New Roman', serif",
+        "#ffdf58"
+      );
+
+      // Bottom logos
+      drawAssetContain(ctx, swachhata, 57.2, 490.45, 112.5, 48.75);
+      drawAssetContain(ctx, qr, 694, 480.3, 69, 69);
+
+      return canvas;
+    }
+
+    /*
+     * Minimal PDF writer.
+     * The certificate is a JPEG image inside a valid A4 landscape PDF.
+     * No jsPDF, no external CDN and no third-party library are required.
+     */
+    function createImagePDF(dataUrl, width, height) {
+      const base64 = dataUrl.split(",")[1];
+      const binary = atob(base64);
+      const imageBytes = new Uint8Array(binary.length);
+
+      for (let i = 0; i < binary.length; i++) {
+        imageBytes[i] = binary.charCodeAt(i);
+      }
+
+      const encoder = new TextEncoder();
+      const chunks = [];
+      const offsets = [];
+      let total = 0;
+
+      function pushBytes(bytes) {
+        chunks.push(bytes);
+        total += bytes.length;
+      }
+
+      function pushText(text) {
+        pushBytes(encoder.encode(text));
+      }
+
+      function addObject(number, body) {
+        offsets[number] = total;
+        pushText(`${number} 0 obj\n`);
+        pushText(body);
+        pushText(`\nendobj\n`);
+      }
+
+      pushText("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n");
+
+      addObject(1, "<< /Type /Catalog /Pages 2 0 R >>");
+
+      addObject(
+        2,
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>"
+      );
+
+      addObject(
+        3,
+        "<< /Type /Page /Parent 2 0 R " +
+        "/MediaBox [0 0 841.92 595.32] " +
+        "/Resources << /XObject << /Im0 4 0 R >> >> " +
+        "/Contents 5 0 R >>"
+      );
+
+      offsets[4] = total;
+      pushText(
+        "4 0 obj\n" +
+        "<< /Type /XObject /Subtype /Image " +
+        `/Width ${width} /Height ${height} ` +
+        "/ColorSpace /DeviceRGB /BitsPerComponent 8 " +
+        "/Filter /DCTDecode " +
+        `/Length ${imageBytes.length} >>\nstream\n`
+      );
+      pushBytes(imageBytes);
+      pushText("\nendstream\nendobj\n");
+
+      const pageContent =
+        "q\n" +
+        "841.92 0 0 595.32 0 0 cm\n" +
+        "/Im0 Do\n" +
+        "Q\n";
+
+      addObject(
+        5,
+        `<< /Length ${encoder.encode(pageContent).length} >>\nstream\n${pageContent}endstream`
+      );
+
+      const xrefOffset = total;
+
+      pushText(`xref\n0 6\n`);
+      pushText("0000000000 65535 f \n");
+
+      for (let i = 1; i <= 5; i++) {
+        pushText(`${String(offsets[i]).padStart(10, "0")} 00000 n \n`);
+      }
+
+      pushText(
+        "trailer\n" +
+        "<< /Size 6 /Root 1 0 R >>\n" +
+        "startxref\n" +
+        `${xrefOffset}\n` +
+        "%%EOF"
+      );
+
+      const result = new Uint8Array(total);
+      let cursor = 0;
+
+      chunks.forEach((chunk) => {
+        result.set(chunk, cursor);
+        cursor += chunk.length;
+      });
+
+      return result;
+    }
+
+    applyCertificateAssetPaths();
+    updateCertificatePreview();
 
     certificateModal.addEventListener("click", (event) => {
       if (event.target === certificateModal) {
