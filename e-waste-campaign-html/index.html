@@ -1076,6 +1076,501 @@
         font-size: 14px;
       }
     }
+
+    /* =========================
+       CERTIFICATE GENERATOR
+    ========================= */
+
+    .certificate-trigger {
+      background: linear-gradient(135deg, #08783d 0%, #0d6b45 55%, #15366f 100%);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(8, 120, 61, .25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certificate-trigger::before {
+      content: "";
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      top: -45px;
+      right: -25px;
+      transition: .35s;
+    }
+
+    .certificate-trigger:hover::before {
+      transform: scale(1.5);
+    }
+
+    .certificate-trigger:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(8, 120, 61, .32);
+    }
+
+    .certificate-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2500;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(4, 18, 28, .78);
+      backdrop-filter: blur(10px);
+      overflow-y: auto;
+    }
+
+    .certificate-modal.active {
+      display: grid;
+      animation: certModalIn .3s ease;
+    }
+
+    @keyframes certModalIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .certificate-panel {
+      width: min(980px, 100%);
+      max-height: 94vh;
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 28px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .28);
+      border: 1px solid rgba(255, 255, 255, .5);
+      overflow-x: hidden;
+    }
+
+    .certificate-panel-head {
+      padding: 26px 30px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255, 184, 0, .28), transparent 30%),
+        linear-gradient(135deg, #075b31, #08783d 55%, #15366f);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .certificate-panel-head h2 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .certificate-panel-head p {
+      color: rgba(255, 255, 255, .78);
+      font-size: 13px;
+    }
+
+    .certificate-close {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      color: #fff;
+      font-size: 25px;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .certificate-close:hover {
+      background: #fff;
+      color: #075b31;
+      transform: rotate(90deg);
+    }
+
+    .certificate-body {
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .certificate-form {
+      padding: 25px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255, 184, 0, .15), transparent 35%),
+        linear-gradient(145deg, #f5fbf7, #edf5ff);
+      border: 1px solid #dfe9e3;
+    }
+
+    .certificate-form .form-kicker {
+      color: var(--green);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .certificate-form h3 {
+      color: var(--blue);
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .certificate-form>p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .certificate-field {
+      margin-bottom: 16px;
+    }
+
+    .certificate-field label {
+      display: block;
+      color: #294236;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .certificate-field input {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #ccd9d0;
+      border-radius: 12px;
+      outline: none;
+      background: #fff;
+      color: #172b20;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .certificate-field input:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 4px rgba(8, 120, 61, .09);
+    }
+
+    .certificate-help {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #607066;
+      font-size: 11px;
+      line-height: 1.45;
+      margin: 5px 0 18px;
+    }
+
+    .certificate-help span {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e1f3e7;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .certificate-download {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 13px;
+      font-weight: 800;
+      font-size: 14px;
+      background: linear-gradient(135deg, #08783d, #075b31);
+      box-shadow: 0 10px 22px rgba(8, 120, 61, .22);
+      transition: .3s;
+    }
+
+    .certificate-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(8, 120, 61, .3);
+    }
+
+    .certificate-preview-wrap {
+      min-width: 0;
+    }
+
+    .certificate-preview-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: #66756c;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .certificate-preview {
+      position: relative;
+      aspect-ratio: 1.414 / 1;
+      min-height: 360px;
+      padding: 7px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #08783d, #ffb800 52%, #15366f);
+      box-shadow: 0 18px 45px rgba(15, 42, 28, .16);
+    }
+
+    .certificate-paper {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255, 184, 0, .14), transparent 22%),
+        radial-gradient(circle at 12% 88%, rgba(8, 120, 61, .09), transparent 25%),
+        #fffdf7;
+      border: 2px solid rgba(8, 120, 61, .55);
+      padding: 5.5% 7%;
+      text-align: center;
+      color: #172b20;
+    }
+
+    .certificate-paper::before,
+    .certificate-paper::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border: 1px solid rgba(8, 120, 61, .14);
+      border-radius: 50%;
+    }
+
+    .certificate-paper::before {
+      top: -65px;
+      left: -65px;
+    }
+
+    .certificate-paper::after {
+      bottom: -65px;
+      right: -65px;
+    }
+
+    .certificate-mini-logo {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 6px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 20px;
+      background: linear-gradient(135deg, #08783d, #15366f);
+      box-shadow: 0 5px 14px rgba(8, 120, 61, .18);
+    }
+
+    .certificate-paper .cert-org {
+      color: #075b31;
+      font-size: clamp(9px, 1.15vw, 13px);
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .certificate-paper .cert-title {
+      color: #15366f;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(25px, 4vw, 48px);
+      line-height: 1;
+      margin: 10px 0 5px;
+      font-weight: 700;
+    }
+
+    .certificate-paper .cert-subtitle {
+      color: #7a6a3a;
+      font-size: clamp(8px, 1vw, 11px);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .cert-presented {
+      color: #68756e;
+      font-size: clamp(8px, 1vw, 11px);
+      margin-top: 18px;
+      margin-bottom: 4px;
+    }
+
+    .cert-name {
+      color: #075b31;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 3.1vw, 38px);
+      font-weight: 700;
+      border-bottom: 1px solid rgba(8, 120, 61, .35);
+      display: inline-block;
+      min-width: 48%;
+      padding: 0 10px 5px;
+    }
+
+    .cert-designation {
+      margin-top: 5px;
+      color: #58655d;
+      font-size: clamp(8px, 1vw, 12px);
+      font-weight: 700;
+    }
+
+    .cert-description {
+      max-width: 650px;
+      margin: 15px auto 0;
+      color: #536159;
+      font-size: clamp(7px, .9vw, 10px);
+      line-height: 1.55;
+    }
+
+    .cert-footer {
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      bottom: 5%;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .cert-sign {
+      width: 27%;
+      min-width: 80px;
+    }
+
+    .cert-sign-line {
+      border-top: 1px solid #87948c;
+      margin-bottom: 4px;
+    }
+
+    .cert-sign strong {
+      display: block;
+      color: #294236;
+      font-size: clamp(7px, .85vw, 10px);
+    }
+
+    .cert-sign span {
+      color: #79857e;
+      font-size: clamp(6px, .75vw, 9px);
+    }
+
+    .cert-seal {
+      width: clamp(48px, 6vw, 70px);
+      height: clamp(48px, 6vw, 70px);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: clamp(8px, 1vw, 12px);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.05;
+      border: 4px double #fff;
+      outline: 2px solid #08783d;
+      background: linear-gradient(145deg, #08783d, #075b31);
+      box-shadow: 0 5px 15px rgba(8, 120, 61, .2);
+    }
+
+    .cert-date {
+      width: 27%;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .cert-date-line {
+      border-top: 1px solid #87948c;
+      margin-bottom: 4px;
+    }
+
+    .cert-date strong {
+      display: block;
+      color: #294236;
+      font-size: clamp(7px, .85vw, 10px);
+    }
+
+    .cert-date span {
+      color: #79857e;
+      font-size: clamp(6px, .75vw, 9px);
+    }
+
+    .certificate-toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 4000;
+      background: #075b31;
+      color: #fff;
+      padding: 13px 18px;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(15px);
+      transition: .3s;
+    }
+
+    .certificate-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 850px) {
+      .certificate-body {
+        grid-template-columns: 1fr;
+      }
+
+      .certificate-form {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .certificate-preview {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .certificate-modal {
+        padding: 10px;
+      }
+
+      .certificate-panel-head {
+        padding: 20px;
+      }
+
+      .certificate-panel-head h2 {
+        font-size: 22px;
+      }
+
+      .certificate-body {
+        padding: 18px;
+        gap: 22px;
+      }
+
+      .certificate-form {
+        padding: 20px;
+      }
+
+      .certificate-paper {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .cert-footer {
+        left: 5%;
+        right: 5%;
+      }
+    }
   </style>
 </head>
 
@@ -1155,6 +1650,10 @@
               E-Waste Collection Form
             </a>
 
+            <button class="btn certificate-trigger" type="button" onclick="openCertificateGenerator()">
+              🏆 Generate Certificate
+            </button>
+
           </div>
 
           <div class="hero-info">
@@ -1219,7 +1718,7 @@
 
         </div> -->
 
-      </div>
+        </div>
     </section>
 
 
@@ -1693,27 +2192,125 @@
     </div>
 
 
-<div class="copyright text-center text-sm text-gray-300">
-  © 2026 Special Campaign 6.0 • E-Waste Management Initiative<br>
-  Monitoring &amp; Maintained by Intent to Solution Pvt. Ltd.<br>
+    <div class="copyright text-center text-sm text-gray-300">
+      © 2026 Special Campaign 6.0 • E-Waste Management Initiative<br>
+      Monitoring &amp; Maintained by Intent to Solution Pvt. Ltd.<br>
 
-  <a href="mailto:vikash@12s.in" class="text-gray-300 hover:text-white hover:underline">
-    vikash@12s.in
-  </a>
+      <a href="mailto:vikash@12s.in" class="text-gray-300 hover:text-white hover:underline">
+        vikash@12s.in
+      </a>
 
-  &nbsp;|&nbsp;
+      &nbsp;|&nbsp;
 
-  <a href="tel:+919891843471" class="text-gray-300 hover:text-white hover:underline">
-    +91 9891843471
-  </a>
-
-
+      <a href="tel:+919891843471" class="text-gray-300 hover:text-white hover:underline">
+        +91 9891843471
+      </a>
 
 
-</div>
+
+
+    </div>
 
   </footer>
 
+
+
+  <!-- =========================
+       CERTIFICATE GENERATOR
+  ========================= -->
+
+  <div class="certificate-modal" id="certificateModal" aria-hidden="true">
+    <div class="certificate-panel" role="dialog" aria-modal="true" aria-labelledby="certificateHeading">
+
+      <div class="certificate-panel-head">
+        <div>
+          <h2 id="certificateHeading">🏆 Generate Your Certificate</h2>
+          <p>Create a professional participation certificate for Special Campaign 6.0.</p>
+        </div>
+        <button class="certificate-close" type="button" onclick="closeCertificateGenerator()"
+          aria-label="Close certificate generator">×</button>
+      </div>
+
+      <div class="certificate-body">
+
+        <div class="certificate-form">
+          <div class="form-kicker">Certificate Details</div>
+          <h3>Enter your details</h3>
+          <p>Your certificate will be generated instantly as a PDF using the details below.</p>
+
+          <div class="certificate-field">
+            <label for="certificateName">Your Name</label>
+            <input id="certificateName" type="text" placeholder="Enter your name" autocomplete="name" maxlength="80">
+          </div>
+
+          <div class="certificate-field">
+            <label for="certificateDesignation">Your Designation</label>
+            <input id="certificateDesignation" type="text" placeholder="Enter your designation" maxlength="80">
+          </div>
+
+          <div class="certificate-help">
+            <span>✓</span>
+            <div>Use your official name and designation for the best-looking certificate.</div>
+          </div>
+
+          <button class="certificate-download" type="button" onclick="downloadCertificate()">
+            ⬇ Download Certificate (PDF)
+          </button>
+        </div>
+
+        <div class="certificate-preview-wrap">
+          <div class="certificate-preview-label">
+            <span>Live Certificate Preview</span>
+            <span>Special Campaign 6.0</span>
+          </div>
+
+          <div class="certificate-preview">
+            <div class="certificate-paper">
+
+              <div class="certificate-mini-logo">♻</div>
+              <div class="cert-org">CCL • Amrapali-Chandragupt Area</div>
+              <div class="cert-title">Certificate</div>
+              <div class="cert-subtitle">of Participation</div>
+
+              <div class="cert-presented">This certificate is proudly presented to</div>
+              <div class="cert-name" id="previewName">Your Name</div>
+              <div class="cert-designation" id="previewDesignation">Your Designation</div>
+
+              <p class="cert-description">
+                For active participation and support in the
+                <strong>E-Waste Management Initiative</strong> under
+                Special Campaign 6.0, contributing towards responsible
+                collection, segregation, recycling and sustainable
+                electronic waste management.
+              </p>
+
+              <div class="cert-footer">
+                <div class="cert-sign">
+                  <div class="cert-sign-line"></div>
+                  <strong>Campaign Coordinator</strong>
+                  <span>E-Waste Initiative</span>
+                </div>
+
+                <div class="cert-seal">E-WASTE<br>6.0</div>
+
+                <div class="cert-date">
+                  <div class="cert-date-line"></div>
+                  <strong>06 October 2026</strong>
+                  <span>Certificate Date</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="certificate-toast" id="certificateToast">
+    ✓ Certificate generated successfully
+  </div>
 
   <!-- =========================
        GALLERY MODAL
@@ -1757,7 +2354,312 @@
        JAVASCRIPT
   ========================= -->
 
+
   <script>
+
+    /* =========================
+       CERTIFICATE GENERATOR
+    ========================= */
+
+    const certificateModal = document.getElementById("certificateModal");
+    const certificateNameInput = document.getElementById("certificateName");
+    const certificateDesignationInput = document.getElementById("certificateDesignation");
+    const previewName = document.getElementById("previewName");
+    const previewDesignation = document.getElementById("previewDesignation");
+
+    function openCertificateGenerator() {
+      certificateModal.classList.add("active");
+      certificateModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+
+      setTimeout(() => certificateNameInput.focus(), 150);
+    }
+
+    function closeCertificateGenerator() {
+      certificateModal.classList.remove("active");
+      certificateModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function updateCertificatePreview() {
+      const name = certificateNameInput.value.trim();
+      const designation = certificateDesignationInput.value.trim();
+
+      previewName.textContent = name || "Your Name";
+      previewDesignation.textContent = designation || "Your Designation";
+    }
+
+    certificateNameInput.addEventListener("input", updateCertificatePreview);
+    certificateDesignationInput.addEventListener("input", updateCertificatePreview);
+
+    function showCertificateToast(message) {
+      const toast = document.getElementById("certificateToast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      clearTimeout(window.certificateToastTimer);
+      window.certificateToastTimer = setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+
+    function downloadCertificate() {
+      const name = certificateNameInput.value.trim();
+      const designation = certificateDesignationInput.value.trim();
+
+      if (!name || !designation) {
+        showCertificateToast("Please enter your name and designation.");
+        if (!name) {
+          certificateNameInput.focus();
+        } else {
+          certificateDesignationInput.focus();
+        }
+        return;
+      }
+
+      /*
+       * Reliable PDF generator:
+       * This creates a real A4 PDF directly in the browser.
+       * It does not depend on jsPDF, CDN loading, canvas or external files.
+       */
+      try {
+        const pdf = createCertificatePDF(name, designation);
+        const blob = new Blob([pdf], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+
+        const safeName = name
+          .normalize("NFKD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/gi, "-")
+          .replace(/^-+|-+$/g, "")
+          .toLowerCase() || "participant";
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `E-Waste-Certificate-${safeName}.pdf`;
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+
+        setTimeout(() => URL.revokeObjectURL(url), 3000);
+        showCertificateToast("✓ Certificate downloaded successfully");
+      } catch (error) {
+        console.error("Certificate PDF error:", error);
+        showCertificateToast("Unable to create PDF. Please try again.");
+      }
+    }
+
+    function pdfSafeText(value) {
+      return String(value || "")
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\x20-\x7E]/g, "?")
+        .replace(/\\/g, "\\\\")
+        .replace(/\(/g, "\\(")
+        .replace(/\)/g, "\\)");
+    }
+
+    function pdfEscapeText(value) {
+      return `(${pdfSafeText(value)})`;
+    }
+
+    function pdfTextWidth(value, size) {
+      // Approximate Helvetica width; good enough for centered certificate text.
+      return pdfSafeText(value).length * size * 0.52;
+    }
+
+    function pdfCenteredText(lines, text, x, y, size, font = "F1") {
+      const safe = pdfSafeText(text);
+      const width = pdfTextWidth(safe, size);
+      const startX = x - (width / 2);
+      lines.push(`BT /${font} ${size} Tf ${startX.toFixed(2)} ${y.toFixed(2)} Td ${pdfEscapeText(safe)} Tj ET`);
+    }
+
+    function pdfWrapText(text, maxChars) {
+      const words = String(text).split(/\s+/);
+      const lines = [];
+      let line = "";
+
+      words.forEach(word => {
+        const candidate = line ? `${line} ${word}` : word;
+        if (candidate.length > maxChars && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = candidate;
+        }
+      });
+
+      if (line) lines.push(line);
+      return lines;
+    }
+
+    function createCertificatePDF(name, designation) {
+      const W = 841.89; // A4 landscape width in points
+      const H = 595.28; // A4 landscape height in points
+      const commands = [];
+
+      // Background
+      commands.push("0.98 0.99 0.97 rg 0 0 841.89 595.28 re f");
+
+      // Top green / orange / blue bands
+      commands.push("0.03 0.36 0.19 rg 0 570 841.89 25.28 re f");
+      commands.push("0.03 0.47 0.24 rg 0 562 841.89 8 re f");
+      commands.push("1 0.72 0 rg 0 14 841.89 7 re f");
+      commands.push("0.08 0.21 0.44 rg 0 0 841.89 14 re f");
+
+      // Main borders
+      commands.push("0.03 0.47 0.24 RG 2.5 w 34 43 774 505 re S");
+      commands.push("1 0.72 0 RG 1 w 45 54 752 483 re S");
+
+      // Decorative corner lines
+      commands.push("0.03 0.47 0.24 RG 1.4 w");
+      commands.push("62 88 m 145 88 l S 62 88 m 62 171 l S");
+      commands.push("780 88 m 697 88 l S 780 88 m 780 171 l S");
+      commands.push("62 503 m 145 503 l S 62 503 m 62 420 l S");
+      commands.push("780 503 m 697 503 l S 780 503 m 780 420 l S");
+
+      // Very light watermark
+      commands.push("0.92 0.95 0.92 rg");
+      pdfCenteredText(commands, "E-WASTE", W / 2, 326, 62, "F2");
+
+      // Organization
+      commands.push("0.03 0.36 0.19 rg");
+      pdfCenteredText(commands, "CCL - AMRAPALI-CHANDRAGUPT AREA", W / 2, 465, 18, "F2");
+
+      // Certificate heading
+      commands.push("0.08 0.21 0.44 rg");
+      pdfCenteredText(commands, "CERTIFICATE", W / 2, 408, 46, "F3");
+
+      commands.push("0.48 0.42 0.23 rg");
+      pdfCenteredText(commands, "OF PARTICIPATION", W / 2, 389, 13, "F2");
+
+      // Presented to
+      commands.push("0.39 0.44 0.41 rg");
+      pdfCenteredText(commands, "This certificate is proudly presented to", W / 2, 356, 12, "F1");
+
+      // Participant name
+      commands.push("0.03 0.36 0.19 rg");
+      let displayName = pdfSafeText(name);
+      if (displayName.length > 38) displayName = displayName.slice(0, 38) + "...";
+      let nameSize = 30;
+      if (displayName.length > 26) nameSize = 24;
+      if (displayName.length > 34) nameSize = 20;
+      pdfCenteredText(commands, displayName, W / 2, 325, nameSize, "F3");
+
+      const nameLineWidth = Math.min(Math.max(pdfTextWidth(displayName, nameSize) + 35, 185), 480);
+      commands.push(`0.03 0.47 0.24 RG 0.8 w ${(W - nameLineWidth) / 2} 316 m ${(W + nameLineWidth) / 2} 316 l S`);
+
+      // Designation
+      commands.push("0.33 0.38 0.35 rg");
+      let displayDesignation = pdfSafeText(designation);
+      if (displayDesignation.length > 55) displayDesignation = displayDesignation.slice(0, 55) + "...";
+      let designationSize = displayDesignation.length > 42 ? 10 : 12;
+      pdfCenteredText(commands, displayDesignation, W / 2, 294, designationSize, "F2");
+
+      // Description
+      commands.push("0.31 0.36 0.33 rg");
+      const description =
+        "For active participation and support in the E-Waste Management Initiative under Special Campaign 6.0, contributing towards responsible collection, segregation, recycling and sustainable electronic waste management.";
+      const descLines = pdfWrapText(description, 100);
+      descLines.forEach((line, index) => {
+        pdfCenteredText(commands, line, W / 2, 264 - (index * 17), 10.5, "F1");
+      });
+
+      // Seal
+      commands.push("0.03 0.47 0.24 rg 0.03 0.47 0.24 RG");
+      commands.push("0.03 0.47 0.24 rg 421 115 0 0 m");
+      // Seal circles (Bezier approximation - supported by every PDF viewer)
+      const k = 0.5522848;
+      const cx = 421, cy = 145, r = 17.5;
+      commands.push(
+        `0.03 0.47 0.24 rg ${cx + r} ${cy} m ` +
+        `${cx + r} ${cy + k * r} ${cx + k * r} ${cy + r} ${cx} ${cy + r} c ` +
+        `${cx - k * r} ${cy + r} ${cx - r} ${cy + k * r} ${cx - r} ${cy} c ` +
+        `${cx - r} ${cy - k * r} ${cx - k * r} ${cy - r} ${cx} ${cy - r} c ` +
+        `${cx + k * r} ${cy - r} ${cx + r} ${cy - k * r} ${cx + r} ${cy} c f`
+      );
+      const r2 = 13;
+      commands.push(
+        `1 1 1 RG 1.5 w ${cx + r2} ${cy} m ` +
+        `${cx + r2} ${cy + k * r2} ${cx + k * r2} ${cy + r2} ${cx} ${cy + r2} c ` +
+        `${cx - k * r2} ${cy + r2} ${cx - r2} ${cy + k * r2} ${cx - r2} ${cy} c ` +
+        `${cx - r2} ${cy - k * r2} ${cx - k * r2} ${cy - r2} ${cx} ${cy - r2} c ` +
+        `${cx + k * r2} ${cy - r2} ${cx + r2} ${cy - k * r2} ${cx + r2} ${cy} c S`
+      );
+      commands.push("1 1 1 rg");
+      pdfCenteredText(commands, "E-WASTE", W / 2, 147, 8, "F2");
+      pdfCenteredText(commands, "CAMPAIGN 6.0", W / 2, 135, 7, "F2");
+
+      // Signature
+      commands.push("0.51 0.56 0.53 RG 0.7 w 100 104 m 250 104 l S");
+      commands.push("0.16 0.26 0.21 rg");
+      pdfCenteredText(commands, "Campaign Coordinator", 175, 88, 11, "F2");
+      commands.push("0.47 0.52 0.49 rg");
+      pdfCenteredText(commands, "E-Waste Initiative", 175, 74, 9, "F1");
+
+      // Date
+      commands.push("0.51 0.56 0.53 RG 0.7 w 592 104 m 742 104 l S");
+      commands.push("0.16 0.26 0.21 rg");
+      pdfCenteredText(commands, "06 October 2026", 667, 88, 11, "F2");
+      commands.push("0.47 0.52 0.49 rg");
+      pdfCenteredText(commands, "Certificate Date", 667, 74, 9, "F1");
+
+      // Footer reference
+      commands.push("0.59 0.62 0.60 rg");
+      pdfCenteredText(
+        commands,
+        "Special Campaign 6.0 - E-Waste Management Initiative - CCL Amrapali-Chandragupt Area",
+        W / 2,
+        60,
+        8,
+        "F1"
+      );
+
+      const content = commands.join("\n");
+
+      // PDF objects
+      const objects = [];
+      objects.push("<< /Type /Catalog /Pages 2 0 R >>");
+      objects.push("<< /Type /Pages /Kids [3 0 R] /Count 1 >>");
+      objects.push(
+        `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] ` +
+        `/Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >> >> ` +
+        `/Contents 7 0 R >>`
+      );
+      objects.push("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>");
+      objects.push("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>");
+      objects.push("<< /Type /Font /Subtype /Type1 /BaseFont /Times-Bold >>");
+      objects.push(`<< /Length ${content.length} >>\nstream\n${content}\nendstream`);
+
+      let pdf = "%PDF-1.4\n% E-Waste Campaign Certificate\n";
+      const offsets = [0];
+
+      objects.forEach((obj, index) => {
+        offsets[index + 1] = pdf.length;
+        pdf += `${index + 1} 0 obj\n${obj}\nendobj\n`;
+      });
+
+      const xrefOffset = pdf.length;
+      pdf += `xref\n0 ${objects.length + 1}\n`;
+      pdf += "0000000000 65535 f \n";
+
+      for (let i = 1; i <= objects.length; i++) {
+        pdf += `${String(offsets[i]).padStart(10, "0")} 00000 n \n`;
+      }
+
+      pdf += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\n`;
+      pdf += `startxref\n${xrefOffset}\n%%EOF`;
+
+      return new TextEncoder().encode(pdf);
+    }
+
+    certificateModal.addEventListener("click", (event) => {
+      if (event.target === certificateModal) {
+        closeCertificateGenerator();
+      }
+    });
 
     /* =========================
        HERO CAROUSEL
@@ -1877,7 +2779,7 @@
         src: "img6.jpeg",
         title: "Record Management"
       },
-        {
+      {
         src: "img7.jpeg",
         title: "E-Waste Disposal"
       },
@@ -1893,6 +2795,33 @@
       },
       {
         src: "img10.jpeg",
+        title: "Space Optimization"
+      },
+      {
+        src: "img11.jpeg",
+        title: "Scrap Disposal"
+      },
+
+      {
+        src: "img12.jpeg",
+        title: "Space Optimization"
+      },
+      {
+        src: "img13.jpeg",
+        title: "Space Optimization"
+      },
+
+
+      {
+        src: "img15.jpeg",
+        title: "Space Optimization"
+      },
+      {
+        src: "img16.jpeg",
+        title: "Space Optimization"
+      },
+      {
+        src: "img17.jpeg",
         title: "Space Optimization"
       },
 
@@ -1993,6 +2922,8 @@
           closeGallery();
 
           closeImageViewer();
+
+          closeCertificateGenerator();
 
         }
 
